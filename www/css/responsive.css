@@ -1,0 +1,192 @@
+@media only screen and ( max-width: 667px ) {
+	.container {width: 618px;}
+	#header .container li{margin-right:100px;}
+	#container .container li label{width: 154px;}	
+	#container .container .trackers li img{width:100%;}
+	#container .container .right-section img{width:100%;}
+	#container .container .right-section{float:right;}
+	#blood1{width:75px;}
+	#blood2{width:75px;}
+	
+}
+@media only screen and ( max-width: 600px ) {
+	.container {width: 540px;}
+	#container .container .right-section{height:470px;}
+	#container .container .trackers li{width: 28%;}
+	#container .container .trackers form li{width: 100%;}
+	#container .container li label{margin-right:0;}
+	#header .container li {margin-right: 87px;}
+	#container .container li .width140 {width: 103px !important;}
+	#footer .container li img{width:100%;}
+	#footer .container li{width: 20%;}		
+	#container .container li label {width: 160px;}
+	#container .container li .input{width: 347px;}
+	#container .container li span.btn{width: 375px;}
+	#container .container li span.btn a{font-size: 18px;}	
+	#container .container .right-section img{width:100%;}
+	#container .container .right-section{width: 342px;}
+	#showjournal span{margin-left:0;}
+	#demo_datetime{width:35%;}
+	#demo_date{width:169px;}
+	#weight{width:169px;}
+	#heart_rate{width:169px;}
+	#blood1{width:68px;}
+	#blood2{width:68px;}
+	#urine_protein{width:188px;}
+	#container .container .text-margin{margin-right:17px;}
+	.faq .faq-btn{width:90%;}
+	.faq1 h4{font-size:18px;}
+	.faq1 p{font-size:16px;}
+	#add_entry{width:45%;}
+	
+}
+@media only screen and ( max-width: 568px ) {
+	.container {width: 505px;}
+	#header .container li {margin-right: 64px;}
+	#container .container li label{width:175px;}
+	#container .container li .input {width: 318px;}
+	#container .container li span.btn {width: 346px;}
+	#container .container li span.btn2 {width: 99% !important;}
+	#container .container .right-section {width: 63%;}
+	#demo_datetime{width:40%;}
+	.trackers .vital-form p{width:85%;}
+	#demo_date{width:200px;}
+	#weight{width:200px;}
+	#heart_rate{width:200px;}
+	#blood1{width:80px;}
+	#blood2{width:80px;}
+	#urine_protein{width:218px;}
+	}
+	
+@media only screen and ( max-width: 480px ) {
+	.container {width: 445px;}
+	#header .container li{margin-right:56px;}
+	#header .container li a{padding: 8px 10px;}
+	#demo_datetime{margin:0; width:53%;}
+	#container .container .left_section img{width:100%;}
+	#container .container .left_section {width: 27%;}
+	#container .container .right-section{width:69%; height:50%;}
+	.right-sec-contain{margin-left:33%;}
+	.about-baby img{width:50%}
+	#showkicks th{width:37%;}
+	#add_entry{width:42%;}
+	#start{width:42%;}
+	#stop{width:42%;}
+	#add_kick{width:42%;}
+	.contractions-tab table #show1{margin-left:0;}
+	.contractions-tab table #show2{margin-left:0;}
+	.contractions-tab table #show3{margin-left:0;}
+	.contractions-tab table td{width:24%;}
+	.contractions-tab table th{width:67%;}
+	
+	}	
+@media only screen and ( max-width: 414px ) {
+	.container {width: 360px;}
+	#header .container li {margin-right: 0;}
+	#header .container li a{padding: 8px 20px;}
+	#container .container li span.btn a {font-size: 18px;}
+	#container .container h2 {font-size: 26px;}
+	#container .container li label.width100{width: 68px; margin-right: 11px;}
+	#container .container li .width140 {width: 57px;}
+	#container .container .text{font-size: 16px;}
+	#container .container .text-margin {margin-right: 18px;}
+	#container .container li .width140 {width: 51px !important;}
+	#container .container h1 {font-size: 27px;	}
+	#container .container li .input {width: 165px;}
+	#container .container .trackers li {width: 24%; margin-right: 30px;}
+	#add{margin-left:20px;}
+	#add_entry{width:45%;}
+	#start{width:45%;}
+	#stop{width:45%;}
+	#add_kick{width:45%;}
+	#showkicks th{width:60%;}
+	#showjournal span{margin-left:0;}
+	.kick-tab{width:100%;}
+	#showkicks{text-align:left;}
+	#showkicks th{width:52%;}
+	.vitals{width:100%;}
+	#delete_entry{margin-left:30px;}
+	#showjournal span{margin-left:2px;}
+	.appointment{width:100%;}
+	.contractions-btn{width:110px;}
+	
+}
+@media only screen and ( max-width: 384px ) {
+	.container {width: 335px;}
+	#header .container li a {font-size: 21px;}
+	#container .container li span.btn a {font-size: 16px;}
+	#container .container h2 {font-size: 25px;}
+	#container .container li .width140 {width: 38px;}
+	#container .container .rest-text{padding: 44px 0;}
+	#container .container li span.width291 {width: 291px !important;}
+	#container .container h1 {font-size: 26px;}
+	#container .container li label {width: 151px;}
+	#container .container li .input {width: 134px;}
+	#container .container li span.btn {width: 341px;}
+	#container .container li span.btn2 {width: 97% !important;}
+	#container .container .trackers li {width: 40%;	}
+	#container .container .left_section {width: 33%;}
+	#container .container .right-section h3{font-size: 19px;}
+	#container .container .right-section{width:67%;}
+	.right-sec-contain{margin-left:36%;}
+	#add{margin-left:15px;}
+	.contractions-tab table #show1{margin-left:14px;}
+	.contractions-tab table #show2{margin-left:14px;}
+	.contractions-tab table #show3{margin-left:14px;}
+	#showcontraction td{width:18%;}
+	#start_time_rows_1{font-size:14px;}
+	.contractions-tab{width:100%;}
+	#demo_datetime{width:56%;}
+	#add{margin-left:10px;}
+	.faq1 h6{font-size:16px;}
+	#add_entry{width:55%;}
+		}
+@media only screen and ( max-width: 375px ) {
+	.container {width: 338px;}
+	#header .container li a {font-size: 20px;}
+	#container .container h2 {font-size: 23px;}
+	#container .container li .width140 {width: 34px;}
+	
+	#container .container h1 {font-size: 25px;}
+	#container .container li span.btn {width: 328px;}
+	#container .container .right-section p {font-size: 14px;}
+	#container .container .right-section h3 {font-size: 18px;}
+	.app{width:100%;}
+	#demo_datetime{width:40%;}
+	#add{width:35%;}
+	#demo_date{width:160px;}
+	#weight{width:160px;}
+	#heart_rate{width:160px;}
+	#blood1{width:60px;}
+	#blood2{width:60px;}
+	#urine_protein{width:175px;}
+	#container .container .right-sec-contain h3{font-size:18px;}
+	#container .container .right-sec-contain p{font-size:16px;}
+	.faq .faq-btn{width:80%; margin:0 auto; float:none;}
+	.faq1 h6{font-size:15px;}
+}
+@media only screen and ( max-width: 320px ) {
+	.container {width: 280px;}
+	#header .container li a {padding: 8px 11px;}
+	#container .container li span.btn a {font-size: 13px;}
+	#container .container h2 {font-size: 20px;}
+	#container .container li .width140 {width: 9px !important;}
+	
+	#container .container h1 {font-size: 21px;}
+	#container .container li label {width: 120px;}
+	#container .container li{font-size: 16px;}
+	#container .container li .input {width: 100px;}
+	#container .container li span.btn {width: 279px;}
+	#container .container li span.width291 {width: 267px !important;}
+	
+	#container .container .trackers li {width: 40%;}
+	#container .container .trackers li{margin-right:25px;}
+	#container .container .left_section{margin-right: 32px;}
+	#container .container .right-section {width: 55%;}
+	#container .container .right-section p {font-size: 13px;}
+	#container .container .right-section h3 {font-size: 17px;}
+	#demo_datetime{width:50%;}
+	#add_entry{width:62%; padding:15px 10px;}
+#container .container .text-margin{margin-right:6px;}
+#container .container li .width140{width:20px !important;}
+#container .container li .width140{margin-right:1px;}	

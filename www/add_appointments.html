@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Image-2</title>
+<script type="text/javascript" charset="utf-8" src="js/phonegap.js"></script>
+<link href="css/global.css" rel="stylesheet" type="text/css" />
+<link href="css/print.css" rel="stylesheet" type="text/css">
+<link id="pagestyle" rel="stylesheet" type="text/css" href="css/green.css">
+<script src="js/css_loader.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+
+
+<!-- Start Mobi -->
+<!-- jQuery Include -->
+    <script src="mobi/js/mobi_zepto.js"></script>
+
+    <!-- Mobiscroll JS and CSS Includes -->
+    
+    <script src="mobi/js/mobiscroll.zepto.js"></script>
+    <script src="mobi/js/mobiscroll.core.js"></script>
+    <script src="mobi/js/mobiscroll.frame.js"></script>
+    <script src="mobi/js/mobiscroll.scroller.js"></script>
+    <script src="mobi/js/mobiscroll.util.datetime.js"></script>
+    <script src="mobi/js/mobiscroll.datetimebase.js"></script>
+    <script src="mobi/js/mobiscroll.datetime.js"></script>
+
+
+
+    <script src="mobi/js/mobiscroll.frame.android.js"></script>
+
+
+    <script src="mobi/js/i18n/mobiscroll.i18n.en-UK.js"></script>
+
+
+    <link href="mobi/css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+    <link href="mobi/css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
+    <link href="mobi/css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+    <link href="mobi/css/mobiscroll.frame.android.css" rel="stylesheet" type="text/css" />
+
+    <link href="mobi/css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+    <link href="mobi/css/mobiscroll.scroller.android.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<script type="text/javascript">
+
+
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+var db;
+db =getDatabase();
+
+function getDatabase()
+{
+	console.log("Enter Get database");
+	return window.openDatabase("pregnancy","1.0","myTodo Database",200000);
+	console.log("Exit Get database");
+}
+
+function onDeviceReady() {
+        db =getDatabase();
+		console.log("onDeviceReady IN");
+		db.transaction(function (tx) {
+		tx.executeSql('CREATE TABLE IF NOT EXISTS appointments ( id INTEGER PRIMARY KEY AUTOINCREMENT, appointments)');
+		}
+		, databaseError);
+		console.log("onDeviceReady OUT");
+}
+
+function databaseError(error)
+{
+	//alert("DATABASE Error:"+ error.code);	
+}
+
+  
+function add()
+  {
+  console.log("Enter Add");
+  var add = document.getElementById("demo_datetime").value;
+	
+	if(add != "")
+	{
+	db.transaction(function (tx) {
+		tx.executeSql('INSERT INTO appointments(appointments) VALUES("'+ add +'")');
+		//console.log('INSERT INTO appointments(appointments) VALUES("'+ add +'")');
+		}, databaseError);
+		
+	setTimeout(function(){
+	window.location.href="appointments.html";	
+	}, 100);
+	}
+	else
+	{
+	alert("Choose time for appointment");
+	}
+	
+	console.log("Exit Stop timer");
+  }
+  
+  
+
+</script>
+
+
+    
+<body onload="onDeviceReady()">
+<div id="wrapper">
+  <div id="header">
+    <div class="container">
+     <p>Appointments</p>
+    </div>
+  </div>
+  <div id="container">
+    <div class="container">
+    	<div class="trackers app" style="min-height:450px;">
+            
+    <div class="content">
+        <!-- Date & Time demo markup -->
+        <div data-role="fieldcontain" class="demo-cont" id="demo_cont_datetime">
+            <label for="demo_datetime">Add Appointments</label>
+            <input type="text" id="demo_datetime" class="dwtd"/>  
+        <input type="button" id="add" name="add" value="Add" onclick="add()"/>
+		</div>
+		  
+    </div>
+        <div class="clear"></div> 
+        </div>    
+      </form>
+    </div>
+  </div>
+  <div class="clear"></div>
+<script src="js/baby_age.js"></script>
+  <div id="footer">
+  		<div class="container">
+  			<ul class="reset">
+            	<li><a href="index.html"><img src="images/home.jpg"></a></li>
+                <li><a onclick="baby_age_call();"><img src="images/my-baby.jpg"></a></li>
+                <li><a href="trackers.html"><img src="images/trackers.jpg"></a></li>
+                <li><a href="take_photo.html"><img src="images/photo.jpg"></a></li>
+                <li><a href="personalize.html"><img src="images/personalize.jpg"></a></li>
+            </ul>
+          <div class="clear"></div>
+  		</div>
+  </div>
+</div>
+<script>
+        $(function () {
+				demo = "datetime";
+                theme = "android" ,
+                mode = "scroller",
+                display = "modal",
+                lang = "en";
+				
+				    init();
+            function init() {
+                // Date & Time demo initialization
+                $('#demo_datetime').mobiscroll().datetime({
+					
+				
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang,       // Specify language like: lang: 'pl' or omit setting to use default
+                    minDate: new Date(1980,3,10,9,22),  // More info about minDate: http://docs.mobiscroll.com/2-14-0/datetime#!opt-minDate
+                    maxDate: new Date(2100,7,30,15,44),   // More info about maxDate: http://docs.mobiscroll.com/2-14-0/datetime#!opt-maxDate
+                    stepMinute: 1  // More info about stepMinute: http://docs.mobiscroll.com/2-14-0/datetime#!opt-stepMinute
+                });
+            }    
+
+            // Demo page code START, you can disregard this in your implementation
+            var demo, theme, mode, display, lang;
+                   });
+    </script>
+</body>
+</html>
