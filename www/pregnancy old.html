@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Image-1</title>
+
+<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+<link href="css/global.css" rel="stylesheet" type="text/css" />
+<link href="css/print.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min1.10.2.min.js"></script>
+<script src="js/jquery.mobile-1.3.2.min.js"></script>
+<script type="text/javascript">
+var databaseName =  "DummyDB";
+var databaseVersion = "1.0";
+var databaseDisplayName = "DummyDatabase";
+var databaseSize =  2 * 1024 * 1024;
+var myDB = "";
+ 
+
+
+$(document).ready(function(){
+
+
+
+document.getElementById('mother_name').value=localStorage.getItem('mother_name');
+document.getElementById('baby_name').value=localStorage.getItem('baby_name');
+
+	$(".genders").click(function(){
+		$(".genders").each(function(){
+			$(this).removeClass('unknown');
+		});
+		$(this).attr('class','unknown genders');
+	});
+
+	$(".duedates").click(function(){
+		$(".duedates").each(function(){
+			$(this).removeClass('unknown');
+		});
+		$(this).attr('class','unknown duedates');
+	});
+
+	$(".units").click(function(){
+		if($(this).attr('alt') == 'kg')
+		{
+			$("#weight_lb").hide();
+			$("#weight_kg").show();
+		}
+		else
+		{
+			$("#weight_kg").hide();
+			$("#weight_lb").show();
+		}
+		$(".units").each(function(){
+			$(this).removeClass('unknown');
+		});
+		$(this).attr('class','unknown units');
+	});
+});
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+var db;
+db =getDatabase();
+
+function getDatabase()
+{
+	
+	return window.openDatabase("pregnancy","1.0","myTodo Database",200000);
+}
+
+function onDeviceReady() {
+        db =getDatabase();
+		alert("onDeviceReady IN");
+		db.transaction(function (tx) {
+		tx.executeSql('CREATE TABLE IF NOT EXISTS tasks ( id INTEGER PRIMARY KEY AUTOINCREMENT, name)');
+		}
+		, databaseError, getItems);
+		alert("onDeviceReady OUT");
+}
+
+
+function getItems()
+{
+	console.log("Entering get Items..!!");
+	db.transaction(function (tx) {
+		tx.executeSql('SELECT * FROM tasks',[],querySuccess);
+		}, databaseError);
+	console.log("Leaving get Items..!!");
+}
+
+function querySuccess(tx,results)
+{
+	console.log("Entering querySuccess");
+	var len = results.rows.length;
+	var output = '';
+	for(var i=0; i < len ; i++)
+	{
+		output = output + '<li id="' + results.rows.item(i).id + '">' + results.rows.item(i).name + '</li>';
+	}
+	alert(output+"OUTPUT");
+}
+
+function insertItem()
+{
+	console.log("Entering insertItem");
+	var insertValue = document.getElementById("mother_name").value;
+	
+	db.transaction(function (tx) {
+		tx.executeSql('INSERT INTO tasks(name) VALUES("'+ insertValue+'")');
+		}, databaseError,getItems);
+		alert("insertItem OUT");
+
+}   
+
+function databaseError(error)
+{
+	alert("DATABASE Error:"+ error.code);
+	
+}
+
+   
+$(document).ready(function(){
+	
+
+});
+
+function save_data()
+{
+	console.log("Got Tasks..!!");
+	
+insertItem();
+/*	
+var mother_name = document.getElementById("mother_name").value;
+var baby_name = document.getElementById("baby_name").value;
+
+localStorage.setItem('mother_name', mother_name);
+localStorage.setItem('baby_name', baby_name);
+
+alert(baby_name);
+*/
+}
+
+
+
+
+
+</script>
+</head>
+<body onload="onDeviceReady();">
+<div id="wrapper">
+  <div id="header">
+    <div class="container">
+      <ul class="reset">
+        <li><a href="#">Reset</a></li>
+        <li><a href="#" class="hold">Personalize</a></li>
+        <li class="last-child"><a onclick="save_data();">Done</a></li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div id="container">
+    <div class="container">
+      <h1>Personalize my application:</h1>
+      <form action="" method="POST">
+        <ul class="reset">
+          <li>
+            <label>Mother's Name:</label>
+            <div class="fieldlft">
+              <input class="input" name="mother_name" id="mother_name"type="text">
+            </div>
+          </li>
+          
+          <li>
+            <label>Baby's Name:</label>
+            <div class="fieldlft">
+              <input class="input input-2" name="baby_name" id="baby_name" type="text">
+            </div>
+          </li>
+          
+          <li>
+            <label>Gender:</label>
+            <div class="fieldlft"> 
+			<span class="btn"> <a  id="genderid" alt="Unknown" class="genders">Unknown</a> <a href="javascript:void(0);" id="genderid" alt="Female"class="genders">Female</a><a href="javascript:void(0);" id="genderid" alt="Male" class="genders">Male</a></span></div>
+          </li>
+        </ul>
+        
+        
+        <ul class="reset due-date">
+          <li>Due date type:</li>
+          <li><span class="btn btn2"><a href="javascript:void(0);" class="unknown duedates">Not Pregnant</a> <a href="javascript:void(0);" class="side-line duedates">LMP </a><a href="javascript:void(0);" class="duedates">Due date</a></span></li>
+          <li class="rightAlign">Set Date</li>
+        </ul>
+        <div class="clear"></div>
+        
+        
+        <h2>Mother's Pre-pregnancy info:</h2>
+        <ul class="reset" id="weight_lb">
+          <li>
+            <label class="width100">Weight:</label>
+            <div class="fieldlft">
+              <input class="input width140" name="" type="text">
+            </div>
+            <div class="text">pounds</div>
+          </li>
+          <li class="leftAlign">
+            <label class="width100">Height:</label>
+            <div class="fieldlft">
+              <input class="input width140" name="" type="text">
+            </div>
+            <div class="text text-margin">ft</div>
+            <div class="fieldlft">
+              <input class="input width140" name="" type="text">
+            </div>
+            <div class="text">inches</div>
+          </li>
+        </ul>
+		<ul class="reset" id="weight_kg" style="display:none;">
+          <li>
+            <label class="width100">Weight:</label>
+            <div class="fieldlft">
+              <input class="input width140" name="" type="text">
+            </div>
+            <div class="text">kg</div>
+          </li>
+          <li class="leftAlign">
+            <label class="width100">Height:</label>
+            <div class="fieldlft">
+              <input class="input width140" name="" type="text">
+            </div>
+            <div class="text text-margin">cm</div>
+          </li>
+        </ul>
+        <div class="clear"></div>
+        
+        <ul class="reset">
+            <li class="first-child">
+                <label class="width160">Weight units:</label>
+                <div class="fieldlft"> <span class="btn width291"> <a href="javascript:void(0);" alt="lb" class="unknown lb units">lb</a> <a href="javascript:void(0);" class="units" alt="kg">kg</a></span></div>
+              </li>   
+		</ul>        
+      </form>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div id="footer">
+  		<div class="container">
+  			<ul class="reset">
+            	<li><a href="index.html"><img src="images/home.jpg"></a></li>
+                <li><a href="my_baby.html"><img src="images/my-baby.jpg"></a></li>
+                <li><a href="trackers.html"><img src="images/trackers.jpg"></a></li>
+                <li><a href="take_photo.html"><img src="images/photo.jpg"></a></li>
+                <li><a href="personalize.html"><img src="images/personalize.jpg"></a></li>
+            </ul>
+          <div class="clear"></div>
+  		</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Image-2</title>
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+<link href="css/global.css" rel="stylesheet" type="text/css" />
+<link href="css/print.css" rel="stylesheet" type="text/css">
+<link id="pagestyle" rel="stylesheet" type="text/css" href="css/green.css">
+<script src="js/css_loader.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+</head>
+<script>
+function load_tracker_images()
+{
+console.log('In');
+	var css_page =  localStorage.getItem('css_page');
+	var index_baby = document.getElementById('baby');
+	var index_journal = document.getElementById('journal');
+	var index_photos = document.getElementById('photos');
+	var index_kicks = document.getElementById('kicks');
+	var index_faq = document.getElementById('faq');
+    var index_visits = document.getElementById('visits');
+	var index_contractions = document.getElementById('contractions');
+	var index_birth_plan = document.getElementById('birth_plan');
+	var index_vitals = document.getElementById('vitals');
+	
+	
+	var baby = '';
+	var journal = '';
+	var photos = '';
+	var kicks = '';
+	var faq = '';
+	var visits = '';
+	var contractions = '';
+	var birth_plan = '';
+	var vitals = '';
+	
+	if(css_page == "green.css")
+	{
+	baby = "images/baby.png";
+	journal = "images/journal.png";
+	photos = "images/photos.png";
+	kicks = "images/kicks.png";
+	faq = "images/faqs.png";
+	visits = "images/visits.png";
+	contractions = "images/contractions.png";
+	birth_plan = "images/birth-plan.png";
+	vitals = "images/vitals.png";
+	}
+	else if(css_page == "pink.css")
+	{
+	baby = "images/baby-p.png";
+	journal = "images/journal-p.png";
+	photos = "images/photos-p.png";
+	kicks = "images/kicks-p.png";
+	faq = "images/faq-p.png";
+	visits = "images/visits-p.png";
+	contractions = "images/contractions-p.png";
+	birth_plan = "images/birth-plan-p.png";
+	vitals = "images/vitals-p.png";
+	}
+	else if(css_page == "blue.css")
+	{
+	baby = "images/baby-b.png";
+	journal = "images/journal-b.png";
+	photos = "images/photos-b.png";
+	kicks = "images/kicks-b.png";
+	faq = "images/faq-b.png";
+	visits = "images/visits-b.png";
+	contractions = "images/contractions-b.png";
+	birth_plan = "images/birth-plan-b.png";
+	vitals = "images/vitals-b.png";
+	}	
+
+	index_baby.src = baby;
+	index_journal.src = journal;
+	index_photos.src = photos;
+	index_kicks.src = kicks;
+	index_faq.src = faq;
+	index_visits.src = visits;
+	index_contractions.src = contractions;
+	index_birth_plan.src = birth_plan;
+	index_vitals.src = vitals;
+	console.log('Out');
+}
+</script>
+<body onload="load_tracker_images();">
+<div id="wrapper">
+  <div id="header">
+    <div class="container">
+     <p>Trackers</p>
+    </div>
+  </div>
+  <div id="container">
+    <div class="container">
+    	<div class="trackers trackers-pg">
+            <ul class="reset">
+                <li><a class="appointments" href="appointments.html"><img id="visits" src="images/visits.png"></a></li>
+                <li><a class="kick" href="kick.html"><img id="kicks" src="images/kicks.png"></a></li>
+                <li><a class="contractions" href="contractions.html"><img id="contractions" src="images/contractions.png"></a></li>
+                <li><a class="journal" href="journal.html"><img id="journal" src="images/journal.png"></a></li>
+                <li><a class="take_photo" href="take_photo.html"><img id="photos" src="images/photos.png"></a></li>
+                 <li><a class="baby" onclick="baby_age_call();"><img id="baby" src="images/baby.png"></a></li>
+                <li><a class="birthplan" href="birthplan.html"><img id="birth_plan" src="images/birth-plan.png"></a></li>
+                <li><a class="vitals" href="vitals.html"><img id="vitals" src="images/vitals.png"></a></li>
+                <li><a class="faq" href="faq.html"><img id="faq" src="images/faqs.png"></a></li>
+                
+            </ul> 
+        <div class="clear"></div> 
+        </div>    
+      </form>
+    </div>
+  </div>
+  <div class="clear"></div>
+<script src="js/baby_age.js"></script>
+  <div id="footer">
+  		<div class="container">
+  			<ul class="reset">
+            	<li><a href="index.html"><img src="images/home.jpg"></a></li>
+                <li><a onclick="baby_age_call();"><img src="images/my-baby.jpg"></a></li>
+                <li><a href="trackers.html"><img src="images/trackers.jpg"></a></li>
+                <li><a href="take_photo.html"><img src="images/photo.jpg"></a></li>
+                <li><a href="personalize.html"><img src="images/personalize.jpg"></a></li>
+            </ul>
+          <div class="clear"></div>
+  		</div>
+  </div>
+</div>
+</body>
+</html>
