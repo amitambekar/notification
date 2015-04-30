@@ -64,6 +64,7 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
+	<gap:plugin name="org.apache.cordova.CameraLauncher"/>
 <!--
 	<plugins>
     <plugin name="App" value="org.apache.cordova.App"/>
