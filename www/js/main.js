@@ -40,8 +40,10 @@ function onDeviceReady() {
 
 //Capture Photo
 function takePhoto() {
-	console.log("Take Photo");
-	navigator.camera.getPicture(onPhotoDataSuccess,onError,{quality:50,destinationType: destinationType.DATA_URL});
+	navigator.camera.getPicture(onPhotoDataSuccess,onError,{
+		quality:50,
+		destinationType: destinationType.DATA_URL
+	});
 }
 
 //Capture Photo from main page
@@ -54,7 +56,6 @@ function takeMainPic() {
 
 //Get Photo from Library
 function getPhoto(source) {
-	console.log("Get Photo");
 	navigator.camera.getPicture(onPhotoURISuccess,onError,{
 		quality:50,
 		destinationType: destinationType.FILE_URI,
@@ -100,6 +101,6 @@ function onPhotoURISuccess(imageURI) {
 
 //Handle errors
 function onError(error){
-	alert("Error Image: "+ error);
+	alert("Error: "+ error);
 }
 
