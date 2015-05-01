@@ -128,7 +128,7 @@ function onError(error){
     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
                                 destinationType: Camera.DestinationType.FILE_URI,
                                 saveToPhotoAlbum: false,
-                                allowEdit: true });
+                                allowEdit: false });
 }
 	
 	function getPhoto(source) {
