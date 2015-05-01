@@ -25,8 +25,8 @@ $(document).ready(function(){
 
 
 
-//document.getElementById('mother_name').value=localStorage.getItem('mother_name');
-//document.getElementById('baby_name').value=localStorage.getItem('baby_name');
+document.getElementById('mother_name').value=localStorage.getItem('mother_name');
+document.getElementById('baby_name').value=localStorage.getItem('baby_name');
 
 	$(".genders").click(function(){
 		$(".genders").each(function(){
@@ -68,17 +68,15 @@ db =getDatabase();
 function getDatabase()
 {
 	
-	return window.openDatabase("pregnancy","1.0","myTodo Database",200000);
+	return window.openDatabase("mytodo","1.0","myTodo Database",200000);
 }
 
 function onDeviceReady() {
         db =getDatabase();
-		alert("onDeviceReady IN");
 		db.transaction(function (tx) {
 		tx.executeSql('CREATE TABLE IF NOT EXISTS tasks ( id INTEGER PRIMARY KEY AUTOINCREMENT, name)');
-		}
-		, databaseError, getItems);
-		alert("onDeviceReady OUT");
+		tx.executeSql('INSERT INTO tasks(name) VALUES('+ insertValue+')');
+		}, databaseError, getItems);
 }
 
 
@@ -111,7 +109,6 @@ function insertItem()
 	db.transaction(function (tx) {
 		tx.executeSql('INSERT INTO tasks(name) VALUES("'+ insertValue+'")');
 		}, databaseError,getItems);
-		alert("insertItem OUT");
 
 }   
 
@@ -132,7 +129,7 @@ function save_data()
 	console.log("Got Tasks..!!");
 	
 insertItem();
-/*	
+	
 var mother_name = document.getElementById("mother_name").value;
 var baby_name = document.getElementById("baby_name").value;
 
@@ -140,7 +137,6 @@ localStorage.setItem('mother_name', mother_name);
 localStorage.setItem('baby_name', baby_name);
 
 alert(baby_name);
-*/
 }
 
 
@@ -149,7 +145,7 @@ alert(baby_name);
 
 </script>
 </head>
-<body onload="onDeviceReady();">
+<body onload="">
 <div id="wrapper">
   <div id="header">
     <div class="container">
@@ -182,33 +178,16 @@ alert(baby_name);
           
           <li>
             <label>Gender:</label>
-            <div class="fieldlft"> 
-			<!--<input type="radio" name="gender" id="gender" value="Unknown">Unknown
-			<input type="radio" name="gender" id="gender" value="Male">Male
-			<input type="radio" name="gender" id="gender" value="Female">Female-->
-			
-			<span class="btn"> 
-			<input type="hidden" name="gender" id="gender" value="Unknown">
-	<a href="javascript:void(0);" onclick="document.getElementById('gender').value='Unknown';" alt="Unknown" class="unknown genders">Unknown</a> 
-	<a href="javascript:void(0);" onclick="document.getElementById('gender').value='Female';" alt="Female"class="genders">Female</a>
-	<a href="javascript:void(0);" onclick="document.getElementById('gender').value='Male';" alt="Male" class="genders">Male</a></span>
-			</div>
-          </li>
+            <input type="radio" name="gender" id="gender" value="unknown" style="float:left;width:50px;"> Unknown
+			<input type="radio" name="gender" id="gender" value="male" style="float:left;width:50px;"> Male
+			<input type="radio" name="gender" id="gender" value="female" style="float:left;width:50px;"> Female
+		  </li>
         </ul>
         
         
         <ul class="reset due-date">
           <li>Due date type:</li>
-         <!-- <li><input type="radio" name="due_date" id="due_date" value="Not Pregnant">Not Pregnant</li>
-		  <li><input type="radio" name="due_date" id="due_date" value="LMP">LMP</li>
-		  <li><input type="radio" name="due_date" id="due_date" value="Due Date">Due Date</li>-->
-		  <li><span class="btn btn2">
-		  <input type="hidden" name="due_date" id="due_date" value="Not Pregnant">
-	<a href="javascript:void(0);" onclick="document.getElementById('due_date').value='Not Pregnant';" class="unknown duedates">Not Pregnant</a> 
-	<a href="javascript:void(0);" onclick="document.getElementById('due_date').value='LMP';" class="side-line duedates">LMP </a>
-	<a href="javascript:void(0);" onclick="document.getElementById('due_date').value='Due Date';" class="duedates">Due date</a></span></li>
-		  <input type="hidden" name="set_date" id="set_date">
-		  
+          <li><span class="btn btn2"><a href="javascript:void(0);" class="unknown duedates">Not Pregnant</a> <a href="javascript:void(0);" class="side-line duedates">LMP </a><a href="javascript:void(0);" class="duedates">Due date</a></span></li>
           <li class="rightAlign">Set Date</li>
         </ul>
         <div class="clear"></div>
@@ -219,18 +198,18 @@ alert(baby_name);
           <li>
             <label class="width100">Weight:</label>
             <div class="fieldlft">
-              <input class="input width140" name="weightlb" id="weightlb" type="text">
+              <input class="input width140" name="" type="text">
             </div>
             <div class="text">pounds</div>
           </li>
           <li class="leftAlign">
             <label class="width100">Height:</label>
             <div class="fieldlft">
-              <input class="input width140" name="heightft" id="heightft" type="text">
+              <input class="input width140" name="" type="text">
             </div>
             <div class="text text-margin">ft</div>
             <div class="fieldlft">
-              <input class="input width140" name="heightinches" id="heightinches" type="text">
+              <input class="input width140" name="" type="text">
             </div>
             <div class="text">inches</div>
           </li>
@@ -239,14 +218,14 @@ alert(baby_name);
           <li>
             <label class="width100">Weight:</label>
             <div class="fieldlft">
-              <input class="input width140" name="weightkg" id="weightkg" type="text">
+              <input class="input width140" name="" type="text">
             </div>
             <div class="text">kg</div>
           </li>
           <li class="leftAlign">
             <label class="width100">Height:</label>
             <div class="fieldlft">
-              <input class="input width140" name="heightcm" type="text">
+              <input class="input width140" name="" type="text">
             </div>
             <div class="text text-margin">cm</div>
           </li>
@@ -256,10 +235,7 @@ alert(baby_name);
         <ul class="reset">
             <li class="first-child">
                 <label class="width160">Weight units:</label>
-                <div class="fieldlft"> <span class="btn width291"> 
-				<input type="hidden" name="units" id="units">
-			<a href="javascript:void(0);" onclick="document.getElementById('units').value='lb';" alt="lb" class="unknown lb units">lb</a> 
-			<a href="javascript:void(0);" onclick="document.getElementById('units').value='kg';" class="units" alt="kg">kg</a></span></div>
+                <div class="fieldlft"> <span class="btn width291"> <a href="javascript:void(0);" alt="lb" class="unknown lb units">lb</a> <a href="javascript:void(0);" class="units" alt="kg">kg</a></span></div>
               </li>   
 		</ul>        
       </form>

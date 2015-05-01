@@ -3,459 +3,51 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Pregnancy | Home</title>
-<script type="text/javascript" charset="utf-8" src="js/phonegap.js"></script>
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 <link href="css/global.css" rel="stylesheet" type="text/css" />
-<link href="css/print.css" rel="stylesheet" type="text/css">
-<link id="pagestyle" rel="stylesheet" type="text/css" href="css/green.css">
-<script src="js/css_loader.js"></script>
+<link href="css/print.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link href="css/responsive.css" rel="stylesheet" type="text/css">
-<script src="js/cordova-1.5.0.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-
-    var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value 
-
-    // Wait for PhoneGap to connect with the device
-    //
-    document.addEventListener("deviceready",onDeviceReady,false);
-
-    // PhoneGap is ready to be used!
-    //
-	var db;
-	db =getDatabase();
-
-	function getDatabase()
-	{
-	////alert("Enter Get database");
-	return window.openDatabase("pregnancy","1.0","myTodo Database",200000);
-	////alert("Exit Get database");
-	}
-	
-	
-	
-    function onDeviceReady() {
-		db =getDatabase();
-		////alert("onDeviceReady IN");
-		db.transaction(function (tx) {
-		tx.executeSql('CREATE TABLE IF NOT EXISTS take_photo ( id INTEGER PRIMARY KEY AUTOINCREMENT,img,date)');
-		}
-		, databaseError, getItems);
-		
-		pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, FileIO.gotFS, FileIO.errorHandler);
-		//alert("onDeviceReady OUT");
-    }
-	
-	function getItems()
-{
-	//alert("Entering get Items..!!");
-	db.transaction(function (tx) {
-		tx.executeSql('SELECT * FROM personalize',[],querySuccess);
-		}, databaseError);
-	//alert("Leaving get Items..!!");
-	
-}
-var baby_age1 = 0;
-function querySuccess(tx,results)
-{
-	console.log("Entering querySuccess");
-	var len = results.rows.length;
-	var output = '';
-var set_date=results.rows.item(0).set_date;
-	
-//console.log(len);
-//console.log(set_date+'set date');
-//var date_part = set_date.split("/");
-//a = date_part[1]+"/"+date_part[0]+"/"+date_part[2];
-
-if(set_date != "")
-{
-a =  new Date(set_date);
-a1 = a.toDateString();
-document.getElementById("due_date").innerHTML = a1;
-
-			var preg_date = new Date(new Date(a).setMonth(a.getMonth() - 9));
-			//console.log(preg_date);
-			var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-            var c_date = new Date();
-            // var secondDate = new Date(date_part[2]+"/"+date_part[1]+"/"+date_part[0]);
-		    //console.log(a+"A");
-			//console.log(preg_date+"Preg date");
-		    var secondDate = new Date(preg_date);
-            var diffDays = Math.round(Math.abs((c_date.getTime() - secondDate.getTime()) / (oneDay)));
-			
-			var baby_weeks = diffDays / 7 ;
-			var baby_days = diffDays % 7 ;
-			var weeks_use='';
-			var days_use='';
-			if(baby_weeks > 1)
-			{
-			weeks_use = 'weeks';
-			}
-			else
-			{
-			weeks_use = 'week';
-			}
-			
-			if(baby_days > 1)
-			{
-			days_use = 'days';
-			}
-			else
-			{
-			days_use = 'day';
-			}
-			//console.log(diffDays+" baby age");
-			document.getElementById("baby_age").innerHTML = baby_weeks.toFixed(0)+" "+weeks_use+" "+baby_days+" "+days_use+" old";
-			baby_age1 = baby_weeks.toFixed(0);
-			localStorage.setItem("baby_age_redirect", baby_age1);
-			console.log(baby_age1);
-		    //console.log(a+"A");
-		    var r_date = new Date(a);
-            var preg_day = Math.round(Math.abs((r_date.getTime() - c_date.getTime()) / (oneDay)));
-            //console.log(preg_day+" remaining days"); 
-			var remaining_weeks = preg_day / 7 ;
-			var remaining_days = preg_day % 7 ;
-			var weeks_r_use='';
-			var days_r_use='';
-			if(remaining_weeks > 1)
-			{
-			weeks_r_use = 'weeks';
-			}
-			else
-			{
-			weeks_r_use = 'week';
-			}
-			
-			if(remaining_days > 1)
-			{
-			days_r_use = 'days';
-			}
-			else
-			{
-			days_r_use = 'day';
-			}
-			document.getElementById("remaining").innerHTML = remaining_weeks.toFixed(0)+" "+weeks_r_use+" "+remaining_days+" "+days_r_use;
-			}
-			
-			//if(baby_age1 == )
-			
-	console.log("Exit querySuccess");
-}
-
-function insertItem(img)
-{
-	   ////alert("Entering insertItem");
-
-var date = new Date();
- date = date.toDateString();
-	db.transaction(function (tx) {
-		tx.executeSql('INSERT INTO take_photo(img,date) VALUES("'+img+'","'+date+'")');
-		}, databaseError,getItems);
-		////alert('INSERT INTO take_photo(img,date) VALUES("'+img+'","'+date+'")');
-		////alert("insertItem OUT");
-
-}
-
-
-	function databaseError(error)
-{
-	////alert("DATABASE Error:"+ error.code);	
-}
-	
-    function capturePhoto() {
-      // Take picture using device camera and retrieve image as base64-encoded string
-      //navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
-	  getCapturePhoto();
-    }
-
-	function get_from_gallery() {
-      // Take picture using device camera and retrieve image as base64-encoded string
-      //navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
-	  getPhoto(pictureSource.PHOTOLIBRARY);
-    }
-
-	function getCapturePhoto() {
-    // Retrieve image file location from specified source
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 75,
-                                destinationType: Camera.DestinationType.FILE_URI,
-								targetWidth: 480,
-								targetHeight:640,
-								correctOrientation: true,
-                                saveToPhotoAlbum: false,
-                                allowEdit: true });
-}
-	
-	function getPhoto(source) {
-    // Retrieve image file location from specified source
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-                                destinationType: destinationType.FILE_URI,
-                                saveToPhotoAlbum: false,
-                                sourceType: source,
-                                allowEdit: true });
-}
- 
-// Called when a photo is successfully retrieved
-function onPhotoURISuccess(imageURI) {
-    FileIO.updateCameraImages(imageURI);
-	
-      //var largeImage = document.getElementById('smallImage');
-      //largeImage.style.display = 'block';
-    //largeImage.src = imageURI;
-	//document.getElementById('showdata').value=imageURI;
-	//var large_image = largeImage.src;
-	
-}
- 
-// Called if something bad happens.
-function onFail(message) {
-   alert('Failed because: ' + message);
-}
-    
-	
-	
-	
-	
-	
-function onGetDirectorySuccess(dir) { 
-window.appRootDir = dir;
-      ////alert("Created dir ="+window.appRootDir);
-	  ////alert("name ="+window.appRootDir.name);
-	  ////alert("to URL= "+window.appRootDir.toURL());
-	// ////alert("filesystem ="+window.appRootDir.filesystem);
-	 
-} 
-
-function onGetDirectoryFail(error) { 
-    ////alert("Error creating directory "+error.code); 
-} 
-	
-	// set some globals
-var gImageURI = '';
-var gFileSystem = {};
- 
-var FileIO = {
- 
-// sets the filesystem to the global var gFileSystem
- gotFS : function(fileSystem) {
- 
-	fileSystem.root.getDirectory("pregnancy app", {create: true, exclusive: false}, onGetDirectorySuccess, onGetDirectoryFail);
-    gFileSystem = fileSystem;
- },
- 
-// pickup the URI from the Camera edit and assign it to the global var gImageURI
-// create a filesystem object called a 'file entry' based on the image URI
-// pass that file entry over to gotImageURI()
-updateCameraImages : function(imageURI) {
-        gImageURI = imageURI;
-        window.resolveLocalFileSystemURI(imageURI, FileIO.gotImageURI, FileIO.errorHandler);
-		
-    },
- 
-// pickup the file entry, rename it, and move the file to the app's root directory.
-// on success run the movedImageSuccess() method
- gotImageURI : function(fileEntry) {
- 
- var current_date = new Date();
- var newName = 'INDEX'+current_date.getFullYear() +''+current_date.getMonth() +''+current_date.getDate()+''+current_date.getHours() +''+ current_date.getMinutes() +''+ current_date.getSeconds()+'.jpg';
-       //var newName = "THE_END.jpg";
-	   ////alert(fileEntry.fullPath);
-	 //  document.getElementById("set_image_path").value = window.appRootDir.toURL() +'/'+newName;
-	  // document.getElementById("demo_image").src = window.appRootDir.toURL() +'/'+newName;
-	   ////alert(window.appRootDir);
-       fileEntry.moveTo(window.appRootDir, newName, FileIO.movedImageSuccess, FileIO.errorHandler);
-	   var image_path = window.appRootDir.toURL() +'/'+newName;
-	  //alert('Image Path='+image_path);
-	  var index_image = localStorage.setItem('index_image',image_path);
-	  load_index_image();
-	   //insertItem(image_path);
-       //fileEntry.moveTo(root_path, newName, FileIO.movedImageSuccess, FileIO.errorHandler);
-	  ////alert('out');
- },
- 
-// send the full URI of the moved image to the updateImageSrc() method which does some DOM manipulation
- movedImageSuccess : function(fileEntry) {
-      updateImageSrc(fileEntry.fullPath);
-	 //////alert('movedImageSuccess');
- },
- 
-// get a new file entry for the moved image when the user hits the delete button
-// pass the file entry to removeFile()
- removeDeletedImage : function(imageURI){
-      window.resolveLocalFileSystemURI(imageURI, FileIO.removeFile, FileIO.errorHandler);
- },
- 
-// delete the file
- removeFile : function(fileEntry){
-      fileEntry.remove();
- },
- 
-// simple error handler
- errorHandler : function(e) {
-       var msg = '';
-       switch (e.code) {
-       case FileError.QUOTA_EXCEEDED_ERR:
-               msg = 'QUOTA_EXCEEDED_ERR';
-               break;
-        case FileError.NOT_FOUND_ERR:
-               msg = 'NOT_FOUND_ERR';
-               break;
-        case FileError.SECURITY_ERR:
-               msg = 'SECURITY_ERR';
-               break;
-        case FileError.INVALID_MODIFICATION_ERR:
-               msg = 'INVALID_MODIFICATION_ERR';
-               break;
-        case FileError.INVALID_STATE_ERR:
-               msg = 'INVALID_STATE_ERR';
-               break;
-        default:
-               msg = e.code;
-        break;
- };
-      //alert('Error: ' + msg);
- }
-}
-	
-
-function load_index_image()
-{
-	var path =  localStorage.getItem('index_image');
-	var css_page =  localStorage.getItem('css_page');
-
-	//alert('Path='+path);
-    var largeImage = document.getElementById('imgMain');
-	var index_baby = document.getElementById('baby');
-	var index_journal = document.getElementById('journal');
-	var index_photos = document.getElementById('photos');
-	var index_kicks = document.getElementById('kicks');
-	var index_faq = document.getElementById('faq');
-    
-	var baby = '';
-	var journal = '';
-	var photos = '';
-	var kicks = '';
-	var faq = '';
-	
-	largeImage.style.display = 'block';
-	//path = "images/photo-frame.png";
-	//path = "images/amit.jpg";
-	if(path != '0' && path != null )
-	{
-	largeImage.src = path;
-	}
-	else
-	{
-	if(css_page == "green.css")
-	{
-	path = "images/photo-frame.png";
-	}
-	else if(css_page == "pink.css")
-	{
-	path = "images/photo-frame-p.png";
-	}
-	else if(css_page == "blue.css")
-	{
-	path = "images/photo-frame-b.png";
-	}	
-	largeImage.src = path;
-	}
-	
-		if(css_page == "green.css")
-	{
-	baby = "images/baby.png";
-	journal = "images/journal.png";
-	photos = "images/photos.png";
-	kicks = "images/kicks.png";
-	faq = "images/faqs.png";
-	}
-	else if(css_page == "pink.css")
-	{
-	baby = "images/baby-p.png";
-	journal = "images/journal-p.png";
-	photos = "images/photos-p.png";
-	kicks = "images/kicks-p.png";
-	faq = "images/faq-p.png";
-	}
-	else if(css_page == "blue.css")
-	{
-	baby = "images/baby-b.png";
-	journal = "images/journal-b.png";
-	photos = "images/photos-b.png";
-	kicks = "images/kicks-b.png";
-	faq = "images/faq-b.png";
-	}	
-	index_baby.src = baby;
-	index_journal.src = journal;
-	index_photos.src = photos;
-	index_kicks.src = kicks;
-	index_faq.src = faq;
-}
-
-	 
-function alertDismissed() 
-{
-            // do something
-alert('alertDismissed');
-}
-
-
-function showAlert() {
-       navigator.notification.vibrate(2000);
-    }
-
-</script>
-<style>
-.rotate90 {
-	-webkit-transform: rotate(90deg);
-	-moz-transform: rotate(90deg);
-	-o-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-</style>
+<script type="text/javascript" src="js/main.js"></script>
 </head>
-<body onload="onDeviceReady();">
+<body>
 <div id="wrapper">
   <div id="container">
     <div class="container">
-      <div class="left_section">
-        <ul class="reset">
-          <li><a class="baby" onclick="baby_age_call();"><img id="baby" src="images/baby.png"></a></li>
-          <li><a class="journal" href="journal.html"><img id="journal" src="images/journal.png"></a></li>
-          <li><a class="take_photo" href="take_photo.html"><img id="photos" src="images/photos.png"></a></li>
-          <li><a class="kick" href="kick.html"><img id="kicks" src="images/kicks.png"></a></li>
-          <li class="last-child"><a class="faq" href="faq.html"><img id="faq" src="images/faqs.png"></a></li>
-        </ul>
-      </div>
-      <div class="right-section"> <a href="javascript:void(0);" onclick="capturePhoto();"><img id="imgMain" src="images/photo-frame.png" onload="load_index_image();"></a></div>
-      <div class="right-sec-contain">
-        <form id="indexform" method="POST">
-          <p> Due date: <span id="due_date"></span></p>
-          <p>My baby's age: <span id="baby_age"></span></p>
-          <p>Remaining: <span id="remaining"></span></p>
-        </form>
-        <h3>Quote of the Week!</h3>
-        <!--<a href="#" onclick="showAlert(); return false;">Show Alert</a>-->
-        <p>the best conversation with a mother takes place in silence when only the heart speaks.</p>
-      </div>
-      <div class="clear"></div>
-    </div>
-  </div>
-  <script src="js/baby_age.js"></script>
-  <div id="footer">
-    <div class="container">
-      <ul class="reset">
-        <li><a ><img src="images/home.jpg"></a></li>
-        <li><a onclick="baby_age_call();"><img src="images/my-baby.jpg"></a></li>
-        <li><a href="trackers.html"><img src="images/trackers.jpg"></a></li>
-        <li><a href="take_photo.html"><img src="images/photo.jpg"></a></li>
-        <li><a href="personalize.html"><img src="images/personalize.jpg"></a></li>
-      </ul>
-      <div class="clear"></div>
-    </div>
+      	<div class="left_section">
+        	<ul class="reset">
+            	<li><a href="my_baby.html"><img src="images/baby.jpg"></a></li>
+                <li><a href="#"><img src="images/journal.jpg"></a></li>
+                <li><a href="take_photo.html"><img src="images/photos.jpg"></a></li>
+                <li><a href="#"><img src="images/kicks.jpg"></a></li>
+                <li class="last-child"><a href="#"><img src="images/faqs.jpg"></a></li>
+            </ul> 
+        </div>
+        	
+            <div class="right-section">
+            	<a href="javascript:void(0);" onclick="takeMainPic();"><img id="imgMain" src="images/photo-frame.jpg" style="width:100%;"></a>
+				<form id="indexform" method="POST">
+            	<p> Duea date:  <input type="text" name="duedate"></p>
+                <p>My baby's age: <input type="text" name="age"></p>
+                <p>Remaining: <input type="text" name="remaining" id="remaining"></p>
+				</form>
+                <h3>Quote of the Week!</h3>
+                <p>the best conversation with a mother takes place in silence when only the heart speaks.</p>
+            </div>
+         <div class="clear"></div>
+      	</div>
+     </div>
+   <div id="footer">
+  		<div class="container">
+  			<ul class="reset">
+            	<li><a href="index.html"><img src="images/home.jpg"></a></li>
+                <li><a href="my_baby.html"><img src="images/my-baby.jpg"></a></li>
+                <li><a href="trackers.html"><img src="images/trackers.jpg"></a></li>
+                <li><a href="take_photo.html"><img src="images/photo.jpg"></a></li>
+                <li><a href="personalize.html"><img src="images/personalize.jpg"></a></li>
+            </ul>
+          <div class="clear"></div>
+  		</div>
   </div>
 </div>
 </body>

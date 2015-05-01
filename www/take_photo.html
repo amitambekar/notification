@@ -3,289 +3,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Image-1</title>
-<script type="text/javascript" charset="utf-8" src="js/phonegap.js"></script>
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 <link href="css/global.css" rel="stylesheet" type="text/css" />
-<link href="css/print.css" rel="stylesheet" type="text/css">
-<link id="pagestyle" rel="stylesheet" type="text/css" href="css/green.css">
-<script src="js/css_loader.js"></script>
+<link href="css/print.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link href="css/responsive.css" rel="stylesheet" type="text/css">
-<script src="js/cordova-1.5.0.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value 
-
-    // Wait for PhoneGap to connect with the device
-    //
-    document.addEventListener("deviceready",onDeviceReady,false);
-
-    // PhoneGap is ready to be used!
-    //
-	var db;
-	db =getDatabase();
-
-	function getDatabase()
-	{
-	////alert("Enter Get database");
-	return window.openDatabase("pregnancy","1.0","myTodo Database",200000);
-	////alert("Exit Get database");
-	}
-	
-	
-	
-    function onDeviceReady() {
-		db =getDatabase();
-		////alert("onDeviceReady IN");
-		db.transaction(function (tx) {
-		tx.executeSql('CREATE TABLE IF NOT EXISTS take_photo ( id INTEGER PRIMARY KEY AUTOINCREMENT,img,date)');
-		}
-		, databaseError, getItems);
-		
-		pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, FileIO.gotFS, FileIO.errorHandler);
-		//alert("onDeviceReady OUT");
-    }
-	
-	function getItems()
-{
-	//alert("Entering get Items..!!");
-	db.transaction(function (tx) {
-		tx.executeSql('SELECT * FROM take_photo order by id DESC',[],querySuccess);
-		}, databaseError);
-	//alert("Leaving get Items..!!");
-	
-}
-
-function querySuccess(tx,results)
-{
-	//alert("Entering querySuccess");
-	var len = results.rows.length;
-	var output = '';
-
-		for(var i=0; i < len ; i++)
-	{
-		output = output + '<tr><td width="50%"><img src="' + results.rows.item(i).img + '" id=show_db_image_' + results.rows.item(i).id + '></td></tr>';
-	} 
-
-	//alert('Output='+output);
-
-	document.getElementById("show_images").innerHTML = output;
-	//alert("Exit querySuccess");
-}
-
-function insertItem(img)
-{
-	   ////alert("Entering insertItem");
-
-var date = new Date();
- date = date.toDateString();
-	db.transaction(function (tx) {
-		tx.executeSql('INSERT INTO take_photo(img,date) VALUES("'+img+'","'+date+'")');
-		}, databaseError,getItems);
-		////alert('INSERT INTO take_photo(img,date) VALUES("'+img+'","'+date+'")');
-		////alert("insertItem OUT");
-
-}
-
-
-	function databaseError(error)
-{
-	////alert("DATABASE Error:"+ error.code);	
-}
-	
-    function capturePhoto() {
-      // Take picture using device camera and retrieve image as base64-encoded string
-      //navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
-	  getCapturePhoto();
-    }
-
-	function get_from_gallery() {
-      // Take picture using device camera and retrieve image as base64-encoded string
-      //navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
-	  getPhoto(pictureSource.PHOTOLIBRARY);
-    }
-
-	function getCapturePhoto() {
-    // Retrieve image file location from specified source
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-                                destinationType: Camera.DestinationType.FILE_URI,
-                                saveToPhotoAlbum: false,
-                                allowEdit: true });
-}
-	
-	function getPhoto(source) {
-    // Retrieve image file location from specified source
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-                                destinationType: destinationType.FILE_URI,
-                                saveToPhotoAlbum: false,
-                                sourceType: source,
-                                allowEdit: true });
-}
- 
-// Called when a photo is successfully retrieved
-function onPhotoURISuccess(imageURI) {
-    FileIO.updateCameraImages(imageURI);
-	
-      //var largeImage = document.getElementById('smallImage');
-      //largeImage.style.display = 'block';
-    //largeImage.src = imageURI;
-	//document.getElementById('showdata').value=imageURI;
-	//var large_image = largeImage.src;
-	
-}
- 
-// Called if something bad happens.
-function onFail(message) {
-   alert('Failed because: ' + message);
-}
-    
-	
-	
-	
-	
-	
-function onGetDirectorySuccess(dir) { 
-window.appRootDir = dir;
-      ////alert("Created dir ="+window.appRootDir);
-	  ////alert("name ="+window.appRootDir.name);
-	  ////alert("to URL= "+window.appRootDir.toURL());
-	// ////alert("filesystem ="+window.appRootDir.filesystem);
-	 
-} 
-
-function onGetDirectoryFail(error) { 
-    ////alert("Error creating directory "+error.code); 
-} 
-	
-	// set some globals
-var gImageURI = '';
-var gFileSystem = {};
- 
-var FileIO = {
- 
-// sets the filesystem to the global var gFileSystem
- gotFS : function(fileSystem) {
- 
-	fileSystem.root.getDirectory("pregnancy app", {create: true, exclusive: false}, onGetDirectorySuccess, onGetDirectoryFail);
-    gFileSystem = fileSystem;
- },
- 
-// pickup the URI from the Camera edit and assign it to the global var gImageURI
-// create a filesystem object called a 'file entry' based on the image URI
-// pass that file entry over to gotImageURI()
-updateCameraImages : function(imageURI) {
-        gImageURI = imageURI;
-        window.resolveLocalFileSystemURI(imageURI, FileIO.gotImageURI, FileIO.errorHandler);
-		
-    },
- 
-// pickup the file entry, rename it, and move the file to the app's root directory.
-// on success run the movedImageSuccess() method
- gotImageURI : function(fileEntry) {
- 
- var current_date = new Date();
- var newName = 'PREG'+current_date.getFullYear() +''+current_date.getMonth() +''+current_date.getDate()+''+current_date.getHours() +''+ current_date.getMinutes() +''+ current_date.getSeconds()+'.jpg';
-       //var newName = "THE_END.jpg";
-	   ////alert(fileEntry.fullPath);
-	 //  document.getElementById("set_image_path").value = window.appRootDir.toURL() +'/'+newName;
-	  // document.getElementById("demo_image").src = window.appRootDir.toURL() +'/'+newName;
-	   ////alert(window.appRootDir);
-       fileEntry.moveTo(window.appRootDir, newName, FileIO.movedImageSuccess, FileIO.errorHandler);
-	   var image_path = window.appRootDir.toURL() +'/'+newName;
-	  ////alert('Image Path='+image_path);
-	   insertItem(image_path);
-       //fileEntry.moveTo(root_path, newName, FileIO.movedImageSuccess, FileIO.errorHandler);
-	  ////alert('out');
- },
- 
-// send the full URI of the moved image to the updateImageSrc() method which does some DOM manipulation
- movedImageSuccess : function(fileEntry) {
-      updateImageSrc(fileEntry.fullPath);
-	 //////alert('movedImageSuccess');
- },
- 
-// get a new file entry for the moved image when the user hits the delete button
-// pass the file entry to removeFile()
- removeDeletedImage : function(imageURI){
-      window.resolveLocalFileSystemURI(imageURI, FileIO.removeFile, FileIO.errorHandler);
- },
- 
-// delete the file
- removeFile : function(fileEntry){
-      fileEntry.remove();
- },
- 
-// simple error handler
- errorHandler : function(e) {
-       var msg = '';
-       switch (e.code) {
-       case FileError.QUOTA_EXCEEDED_ERR:
-               msg = 'QUOTA_EXCEEDED_ERR';
-               break;
-        case FileError.NOT_FOUND_ERR:
-               msg = 'NOT_FOUND_ERR';
-               break;
-        case FileError.SECURITY_ERR:
-               msg = 'SECURITY_ERR';
-               break;
-        case FileError.INVALID_MODIFICATION_ERR:
-               msg = 'INVALID_MODIFICATION_ERR';
-               break;
-        case FileError.INVALID_STATE_ERR:
-               msg = 'INVALID_STATE_ERR';
-               break;
-        default:
-               msg = e.code;
-        break;
- };
-      //alert('Error: ' + msg);
- }
-}
-	
-	
-
-
-/*
-function set_path_of_image(id)
-{
-//alert('id='+id);
-var a = document.getElementById("display_image_"+id).value;
-//alert(a);
-
-document.getElementById("show_db_image_"+id).src = a ;
-}
-*/
-</script>
+<script type="text/javascript" src="js/main.js"></script>
 </head>
-<body onload="onDeviceReady();">
+<body>
 <div id="wrapper">
-<div id="container">
+  <div id="container">
     <div class="container">
-		<div style="float:left;"><button class="take_photo_button" onclick="capturePhoto();" >Take Photo</button></div>
-		<div style="float:right;"><!--<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);" style="height:40px;">Get Photo</button>--></div>
-        <div class="clear"></div>
+		<div style="float:left;"><button onclick="takePhoto();" style="height:40px;">Take a Photo</button></div>
+		<div style="float:right;"><button onclick="getPhoto(pictureSource.PHOTOLIBRARY);" style="height:40px;">Get Photo</button></div>
 		<div class="about-baby">
-		<!--<input type="text" id="showdata">-->
-			<center><img style="display:none;width:100%;" id="smallImage" src="" /></center>
-			<center><img style="display:none;" id="largeImage" src="" /></center>
-			<!--<center><img src="" id="demo_image"/></center>-->
-			
-			<!--<input type="text" name="set_image_path" id="set_image_path" value=""><input type="button" value="Click" onclick="set_path_of_image(1);">-->
-			<table id="show_images" width="100%"></table>
+			<center><img style="display:none;width:100%;" id="dataImage" src="" /></center>
 		</div>
 			
       	</div>
-</div>
-<script src="js/baby_age.js"></script>
+     </div>
+	
   <div id="footer">
   		<div class="container">
   			<ul class="reset">
             	<li><a href="index.html"><img src="images/home.jpg"></a></li>
-                <li><a onclick="baby_age_call();"><img src="images/my-baby.jpg"></a></li>
+                <li><a href="my_baby.html"><img src="images/my-baby.jpg"></a></li>
                 <li><a href="trackers.html"><img src="images/trackers.jpg"></a></li>
-                <li><a ><img src="images/photo.jpg"></a></li>
+                <li><a href="take_photo.html"><img src="images/photo.jpg"></a></li>
                 <li><a href="personalize.html"><img src="images/personalize.jpg"></a></li>
             </ul>
           <div class="clear"></div>

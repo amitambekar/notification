@@ -3,7 +3,7 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.helloworld" 
+        id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 
     <name>Pregnancy</name>
@@ -13,7 +13,7 @@
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
-        Amit
+        Paulkumar Nadar
     </author>
 
     <!--
@@ -64,31 +64,14 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
-<feature name="Camera">
-    <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
-</feature>
-<!--
-	<plugins>
-    <plugin name="App" value="org.apache.cordova.App"/>
-    <plugin name="Geolocation" value="org.apache.cordova.GeoBroker"/>
-    <plugin name="Device" value="org.apache.cordova.Device"/>
-    <plugin name="Accelerometer" value="org.apache.cordova.AccelListener"/>
-    <plugin name="Compass" value="org.apache.cordova.CompassListener"/>
-    <plugin name="Media" value="org.apache.cordova.AudioHandler"/>
-    <plugin name="Camera" value="org.apache.cordova.CameraLauncher"/>
-    <plugin name="Contacts" value="org.apache.cordova.ContactManager"/>
-    <plugin name="File" value="org.apache.cordova.FileUtils"/>
-    <plugin name="Network Status" value="org.apache.cordova.NetworkManager"/>
-    <plugin name="Notification" value="org.apache.cordova.Notification"/>
-    <plugin name="Storage" value="org.apache.cordova.Storage"/>
-    <plugin name="Temperature" value="org.apache.cordova.TempListener"/>
-    <plugin name="FileTransfer" value="org.apache.cordova.FileTransfer"/>
-    <plugin name="Capture" value="org.apache.cordova.Capture"/>
-    <plugin value="org.apache.cordova.BatteryListener"/>
-	<plugin name="org.apache.cordova.core.camera" />
-	<plugin name="com.webXells.imageResizer" value="com.webXells.ImageResizer.ImageResizePlugin" />
-</plugins>-->
-
+	<gap:plugin name="com.sharinglabs.cordova.plugin.datepicker" version="1.1.3" />
+	<!--<gap:plugin name="com.millerjames01.sqlite-plugin" version="1.0.1" />-->
+<!--	<gap:plugin name="SQLitePlugin" value="SQLitePlugin"/> -->
+    <!-- Third party plugins -->
+    <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
+    <!--
+        <gap:plugin name="com.phonegap.plugins.barcodescanner" />
+    -->
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
