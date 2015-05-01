@@ -36,7 +36,7 @@
 	
     function onDeviceReady() {
 		db =getDatabase();
-		////alert("onDeviceReady IN");
+		alert("onDeviceReady IN");
 		db.transaction(function (tx) {
 		tx.executeSql('CREATE TABLE IF NOT EXISTS take_photo ( id INTEGER PRIMARY KEY AUTOINCREMENT,img,date)');
 		}
@@ -45,22 +45,22 @@
 		pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, FileIO.gotFS, FileIO.errorHandler);
-		//alert("onDeviceReady OUT");
+		alert("onDeviceReady OUT");
     }
 	
 	function getItems()
 {
-	//alert("Entering get Items..!!");
+	alert("Entering get Items..!!");
 	db.transaction(function (tx) {
 		tx.executeSql('SELECT * FROM take_photo order by id DESC',[],querySuccess);
 		}, databaseError);
-	//alert("Leaving get Items..!!");
+	alert("Leaving get Items..!!");
 	
 }
 
 function querySuccess(tx,results)
 {
-	//alert("Entering querySuccess");
+	alert("Entering querySuccess");
 	var len = results.rows.length;
 	var output = '';
 
@@ -69,10 +69,10 @@ function querySuccess(tx,results)
 		output = output + '<tr><td width="50%"><img src="' + results.rows.item(i).img + '" id=show_db_image_' + results.rows.item(i).id + '></td></tr>';
 	} 
 
-	//alert('Output='+output);
+	alert('Output='+output);
 
 	document.getElementById("show_images").innerHTML = output;
-	//alert("Exit querySuccess");
+	alert("Exit querySuccess");
 }
 
 function insertItem(img)
@@ -84,22 +84,24 @@ var date = new Date();
 	db.transaction(function (tx) {
 		tx.executeSql('INSERT INTO take_photo(img,date) VALUES("'+img+'","'+date+'")');
 		}, databaseError,getItems);
-		////alert('INSERT INTO take_photo(img,date) VALUES("'+img+'","'+date+'")');
-		////alert("insertItem OUT");
+		alert('INSERT INTO take_photo(img,date) VALUES("'+img+'","'+date+'")');
+		alert("insertItem OUT");
 
 }
 
 
 	function databaseError(error)
 {
-	////alert("DATABASE Error:"+ error.code);	
+	alert("DATABASE Error:"+ error.code);	
 }
 	
     function capturePhoto() {
+	alert('In capturePhoto');
       // Take picture using device camera and retrieve image as base64-encoded string
       //navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
 	  getCapturePhoto();
-    }
+    alert('Out capturePhoto');
+	}
 
 	function get_from_gallery() {
       // Take picture using device camera and retrieve image as base64-encoded string
@@ -108,12 +110,14 @@ var date = new Date();
     }
 
 	function getCapturePhoto() {
+	alert('In getCapturePhoto');
     // Retrieve image file location from specified source
     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
                                 destinationType: Camera.DestinationType.FILE_URI,
                                 saveToPhotoAlbum: false,
                                 allowEdit: true });
-}
+	alert('Out getCapturePhoto');
+								}
 	
 	function getPhoto(source) {
     // Retrieve image file location from specified source
@@ -148,15 +152,15 @@ function onFail(message) {
 	
 function onGetDirectorySuccess(dir) { 
 window.appRootDir = dir;
-      ////alert("Created dir ="+window.appRootDir);
+      alert("Created dir ="+window.appRootDir);
 	  ////alert("name ="+window.appRootDir.name);
 	  ////alert("to URL= "+window.appRootDir.toURL());
-	// ////alert("filesystem ="+window.appRootDir.filesystem);
+	alert("filesystem ="+window.appRootDir.filesystem);
 	 
 } 
 
 function onGetDirectoryFail(error) { 
-    ////alert("Error creating directory "+error.code); 
+   alert("Error creating directory "+error.code); 
 } 
 	
 	// set some globals
@@ -197,7 +201,7 @@ updateCameraImages : function(imageURI) {
 	  ////alert('Image Path='+image_path);
 	   insertItem(image_path);
        //fileEntry.moveTo(root_path, newName, FileIO.movedImageSuccess, FileIO.errorHandler);
-	  ////alert('out');
+	  alert('out');
  },
  
 // send the full URI of the moved image to the updateImageSrc() method which does some DOM manipulation
@@ -240,7 +244,7 @@ updateCameraImages : function(imageURI) {
                msg = e.code;
         break;
  };
-      //alert('Error: ' + msg);
+      alert('Error: ' + msg);
  }
 }
 	
