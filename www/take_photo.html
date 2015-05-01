@@ -112,10 +112,10 @@ var date = new Date();
 	function getCapturePhoto() {
 	alert('In getCapturePhoto');
     // Retrieve image file location from specified source
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-                                destinationType: Camera.DestinationType.FILE_URI,
-                                saveToPhotoAlbum: false,
-                                allowEdit: true });
+navigator.camera.getPicture(onPhotoURISuccess,onFail,{
+		quality:50,
+		destinationType: destinationType.DATA_URL
+	});
 	alert('Out getCapturePhoto');
 								}
 	
@@ -130,8 +130,14 @@ var date = new Date();
  
 // Called when a photo is successfully retrieved
 function onPhotoURISuccess(imageURI) {
-    FileIO.updateCameraImages(imageURI);
-	
+    //FileIO.updateCameraImages(imageURI);
+	var dataImage = document.getElementById('smallImage');
+
+	//unhide
+	dataImage.style.display = 'block';
+
+	//show photo
+	dataImage.src = imageURI;
       //var largeImage = document.getElementById('smallImage');
       //largeImage.style.display = 'block';
     //largeImage.src = imageURI;
