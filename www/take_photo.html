@@ -142,11 +142,11 @@ function onError(error){
  
 // Called when a photo is successfully retrieved
 function onPhotoURISuccess(imageURI) {
-    //FileIO.updateCameraImages(imageURI);
+    FileIO.updateCameraImages(imageURI);
 	
-      var largeImage = document.getElementById('smallImage');
-      largeImage.style.display = 'block';
-    largeImage.src = imageURI;
+     // var largeImage = document.getElementById('smallImage');
+     // largeImage.style.display = 'block';
+   // largeImage.src = imageURI;
 	//document.getElementById('showdata').value=imageURI;
 	//var large_image = largeImage.src;
 	
