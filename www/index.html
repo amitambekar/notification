@@ -271,6 +271,10 @@ updateCameraImages : function(imageURI) {
 	  //alert('Image Path='+image_path);
 	  var index_image = localStorage.setItem('index_image',image_path);
 	  load_index_image();
+	  setTimeout(function(){
+	  window.location.href="index.html"; 
+	  }, 1500);
+	  
 	   //insertItem(image_path);
        //fileEntry.moveTo(root_path, newName, FileIO.movedImageSuccess, FileIO.errorHandler);
 	  ////alert('out');
