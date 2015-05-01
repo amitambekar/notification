@@ -5,7 +5,9 @@
 <title>Image-1</title>
 <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 <link href="css/global.css" rel="stylesheet" type="text/css" />
-<link href="css/print.css" rel="stylesheet" type="text/css" />
+<link href="css/print.css" rel="stylesheet" type="text/css">
+<link id="pagestyle" rel="stylesheet" type="text/css" href="css/green.css">
+<script src="js/css_loader.js"></script>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link href="css/responsive.css" rel="stylesheet" type="text/css">
 </head>
@@ -16,7 +18,7 @@
     <div class="container">
       <ul class="reset">
         <li><a href="my_baby_3.html">Prev</a></li>
-        <li><a href="#" class="hold">Week 5</a></li>
+        <li><a href="#" class="hold">My Baby</a></li>
         <li class="last-child"><a href="my_baby_5.html">Next</a></li>
       </ul>
       <div class="clear"></div>
@@ -25,17 +27,23 @@
   <div id="container">
     <div class="container">
       	<div class="about-baby">
-            <img src="images/baby_4.jpg">
-            <h1> 4th Stage</h1>
-            <p>Aenean quis sapien non elit vestibulum rhoncus. Quisque maximus in ligula vel porttitor. Aenean sed velit sit amet metus aliquam dapibus. Integer ipsum lectus, sollicitudin ac erat nec, scelerisque porttitor orci. Praesent placerat diam ac sollicitudin sollicitudin. Phasellus felis quam, malesuada et lorem non, dapibus semper dolor. Aliquam felis odio, pulvinar id aliquam vitae, pulvinar sed tortor.</p>
+            <img src="images/week-4.png">
+            <h1> Week 4</h1>
+            <p>
+			<script>
+var name = (localStorage.getItem('baby_name') || 'Your baby');
+document.write(name+" is measuring 2 mm, which is about the size of a poppy seed. The embryo is starting to receive nutrition and oxygen from the developing placenta. During this week the ebryo will quadruple in size. Amniotic fluid is forming around "+name+" to cushion and protect it.");
+</script>
+			</p>
             </div>
       	</div>
      </div>
+  <script src="js/baby_age.js"></script>
   <div id="footer">
   		<div class="container">
   			<ul class="reset">
             	<li><a href="index.html"><img src="images/home.jpg"></a></li>
-                <li><a href="my_baby.html"><img src="images/my-baby.jpg"></a></li>
+                <li><a onclick="baby_age_call();"><img src="images/my-baby.jpg"></a></li>
                 <li><a href="trackers.html"><img src="images/trackers.jpg"></a></li>
                 <li><a href="take_photo.html"><img src="images/photo.jpg"></a></li>
                 <li><a href="personalize.html"><img src="images/personalize.jpg"></a></li>

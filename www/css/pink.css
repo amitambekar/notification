@@ -1,0 +1,60 @@
+body {margin:0; padding:0;font:normal 13px Arial, Helvetica, sans-serif; color:#5b5b5b; line-height:normal;background:#DFB4DC;}
+
+#wrapper{ width:100%; margin:0 auto;}
+
+.container{width:667px; padding:0 10px; margin:0 auto;}
+#header .container li a{font-size:24px; color:#DFB4DC; display:block; padding:8px 22px; }
+
+#container{ width:100%; padding-bottom:120px;}
+#container .container{padding-top:10px;}
+
+.trackers{width:63%; float:none; margin:0 auto;}
+#add_entry{padding:15px 30px; width:32%; background:#FFF; opacity: 0.80; color:#f8aab8; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0; margin-bottom:10px;}
+
+#start{padding:15px 30px; background:#FFF; opacity: 0.80; color:#f8aab8; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0; width:32%; float:left;}
+#stop{padding:15px 30px;background:#FFF; opacity: 0.80; color:#f8aab8; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0;width:32%; float:left;}
+#add_kick{float:right; width:32%;padding:15px 30px; background:#FFF; opacity: 0.80; color:#f8aab8; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0;}
+
+#showkicks{padding-top:10px; text-align:center; font-size:15px;float:left;}
+#showkicks tr{border-bottom:2px solid #000;}
+
+/*images*/
+
+/*.trackers-pg  li .appointments{background:url(../images/visits-p.png) no-repeat; display:block; width:168px; height:168px;}
+.trackers-pg  li .kick,.left_section li .kick{background:url(../images/kicks-p.png) no-repeat; display:block; width:168px; height:168px;}
+.trackers-pg  li .contractions{background:url(../images/contractions-p.png) no-repeat; display:block; width:168px; height:168px;}
+.trackers-pg  li .journal, .left_section li .journal{background:url(../images/journal-p.png) no-repeat; display:block; width:168px; height:168px;}
+.trackers-pg  li .take_photo,.left_section li .take_photo{background:url(../images/photos-p.png) no-repeat; display:block; width:168px; height:168px;}
+.trackers-pg  li .baby, .left_section li .baby{background:url(../images/baby-p.png) no-repeat; display:block; width:168px; height:168px;}
+.trackers-pg  li .birthplan{background:url(../images/birth-plan-p.png) no-repeat; display:block; width:168px; height:168px;}
+.trackers-pg  li .vitals{background:url(../images/vitals-p.png) no-repeat; display:block; width:168px; height:168px;}
+.trackers-pg  li .faq, .last-child .faq{background:url(../images/faq-p.png) no-repeat; display:block; width:168px; height:168px;}*/
+
+/*.right-section{background:url(../images/photo-frame-p.png) no-repeat; display:block; background-size:100%;}*/
+
+.take_photo_button{padding:20px 15px; background:#FFF; opacity: 0.80; color:#f8aab8; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0; width:100%;}
+
+
+#appointments{padding:10px 15px; background:#FFF; opacity: 0.80; color:#f8aab8; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0;}
+
+#demo_cont_datetime label{font-size:18px; font-family:Arial, Helvetica, sans-serif;}
+#demo_datetime{width:33%; padding:7px;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px; border:none; margin:0 5px;}
+#add{padding:10px 15px; background:#FFF; opacity: 0.80; color:#f8aab8; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0;}
+
+#showdata{border:none; text-align:center; font-size:15px;}
+#appo_del{padding:10px 30px; background:#FFF; opacity: 0.80; color:#f8aab8; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0; margin-left:60%;}
+
+#data{-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; height:300px; color:#DFB4DC; }
+
+/*contractions*/
+
+.contractions-btn{padding:15px 30px; background:#FFF; opacity: 0.80; color:#f8aab8; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0; float:right; width:130px;}
+
+#showcontraction th{width:73%;}
+
+
+
+/*journal, vitals*/
+#delete_entry{padding:15px 0; width:100%; background:#FFF; opacity: 0.80; color:#f8aab8; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0;  margin-left:60%;}
+
+.faq .faq-btn {padding:15px; background:#FFF; opacity: 0.80; color:#f8aab8; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0; width:95%; display:block; text-align:center;}

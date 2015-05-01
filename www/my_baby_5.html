@@ -5,7 +5,9 @@
 <title>Image-1</title>
 <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 <link href="css/global.css" rel="stylesheet" type="text/css" />
-<link href="css/print.css" rel="stylesheet" type="text/css" />
+<link href="css/print.css" rel="stylesheet" type="text/css">
+<link id="pagestyle" rel="stylesheet" type="text/css" href="css/green.css">
+<script src="js/css_loader.js"></script>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link href="css/responsive.css" rel="stylesheet" type="text/css">
 </head>
@@ -16,8 +18,8 @@
     <div class="container">
       <ul class="reset">
         <li><a href="my_baby_4.html">Prev</a></li>
-        <li><a href="#" class="hold">Week 6</a></li>
-        <li class="last-child"><a href="#">Next</a></li>
+        <li><a href="#" class="hold">My Baby</a></li>
+        <li class="last-child"><a href="my_baby_6.html">Next</a></li>
       </ul>
       <div class="clear"></div>
     </div>
@@ -25,17 +27,23 @@
   <div id="container">
     <div class="container">
       	<div class="about-baby">
-            <img src="images/baby_5.jpg">
-            <h1> 5th Stage</h1>
-            <p>Proin a nisi sed libero pulvinar ullamcorper. Morbi eget blandit nunc, eget pharetra dui. Proin nibh magna, luctus sodales est sit amet, commodo tempus tellus. Nam porta nisl quis est placerat vulputate. Sed pharetra ex et cursus semper. Aenean sit amet erat fringilla, hendrerit ipsum eu, vulputate elit. Sed lacinia diam quis dolor molestie ornare eleifend a purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut non aliquam dolor.</p>
+            <img src="images/week-5.png">
+            <h1> Week 5</h1>
+            <p>
+			<script>
+var name = (localStorage.getItem('baby_name') || 'Your baby');
+document.write(name+" is measuring 8 mm(1/4 inch), which about is the size of a lentil. This is the week that "+name+"'s heart begins to form and start beating! At the end of this week the heart beat can be detected by an ultrasound. The first blood vessels and red blood cells are starting to develop and the brain is dividing into five parts. The brain and spinal cord grow faster than the rest of "+name+"'s body, which explains why the embryo looks loike it has a 'tail'   .");
+</script>
+</p>
             </div>
       	</div>
      </div>
+  <script src="js/baby_age.js"></script>
   <div id="footer">
   		<div class="container">
   			<ul class="reset">
             	<li><a href="index.html"><img src="images/home.jpg"></a></li>
-                <li><a href="my_baby.html"><img src="images/my-baby.jpg"></a></li>
+                <li><a onclick="baby_age_call();"><img src="images/my-baby.jpg"></a></li>
                 <li><a href="trackers.html"><img src="images/trackers.jpg"></a></li>
                 <li><a href="take_photo.html"><img src="images/photo.jpg"></a></li>
                 <li><a href="personalize.html"><img src="images/personalize.jpg"></a></li>

@@ -7,27 +7,27 @@ a:hover{ color:#000000;}
 
 /*Main COntent*/
 #wrapper{ width:100%; margin:0 auto;}
-
+#container{padding-top:4%;}
 .container{width:667px; padding:0 10px; margin:0 auto;}
 
-#header{width:100%; background:#161816;}
+#header{width:100%; background:#161816;position:fixed; top:0; padding:.5% 0; z-index:9999;}
 
 #header .container li{float:left; margin-right:135px;}
 #header .container li a{font-size:24px; color:#568b4d; display:block; padding:8px 22px; }
 #header .container li a.hold{color:#ffffff; font-weight:bold;}
 #header .container li.last-child{margin:0;}
 
-#container{background:#b7ddb9; width:100%;}
+#container{ width:100%; padding-bottom:120px; min-height:100%; margin-top:30px;}
 #container .container{padding-top:10px;}
 #container .container h1{font-size:30px; color:#000; margin-bottom:20px;}
 
 #container .container li{margin-bottom:10px;font-size:20px;color:#000; font-weight:bold; overflow:hidden  }
-#container .container li label{margin-right:20px; line-height:45px; width:207px; display:block; float:left; }
-#container .container li label.width100{margin-right:20px; line-height:45px; width:100px; display:block; float:left; font-size: 19px; font-weight: normal; }
+#container .container li label{margin-right:20px; line-height:26px; width:166px; display:block; float:left; }
+#container .container li label.width100{margin-right:20px; line-height:45px; width:160px; display:block; float:left; font-size: 19px; font-weight: normal; }
 #container .container li .fieldlft{float:left;}
 
-/*#container .container li .input{border:1px solid #bdc5bd;-webkit-border-radius: 10px;-moz-border-radius: 10px; border-radius: 10px; padding:15px; width:375px;}*/
-#container .container li .width140{width:140px; margin-right:10px;}
+#container .container li .input{border:1px solid #bdc5bd;-webkit-border-radius: 10px;-moz-border-radius: 10px; border-radius: 10px; padding:15px; width:375px;}
+#container .container li .width140{width:120px; margin-right:10px;}
 
 #container .container li span .input-2{margin-left:19px;}
 #container .container li span.btn{border:2px solid #568b4d; display:inline-block; -webkit-border-radius: 7px;-moz-border-radius: 7px; border-radius: 7px; width:407px; }
@@ -54,25 +54,67 @@ a:hover{ color:#000000;}
 
 #container .container .rest-text{text-align:center; color:#568b4d; font-size:40px; font-weight:bold; padding:80px 0;}
 
-#footer{width:100%; background:#f7f7f7; border-top:1px solid #809a81;}
-#footer .container li{float:left;}
+#footer{width:100%; background:#f7f7f7; border-top:1px solid #809a81;position: fixed;bottom:0;}
+#footer .container li{float:left; width:20%;}
 
 
-#header .container{padding:30px 0;}
+#header .container{padding:0; }
 #header .container p{font-size:30px; text-align:center; color:#FFF; }
 
-#container .container .trackers li{float:left; margin-right:54px; margin-top:30px;}
+.trackers-pg{width:92% !important;}
+#container .container .trackers-pg li{float:left; margin-right:5%; margin-top:30px;}
+
 
 #container .container .about-baby{text-align:center;}
 #container .container .about-baby h1{margin:36px 0 21px;}
 #container .container .about-baby p{text-align:left; font-size:18px; color:#000;}
 
-#container .container .left_section{float:left; width:168px; margin-right:45px;}
+#container .container .left_section{float:left; width:35%; }
 #container .container .left_section li.last-child{margin:0;}
 
-#container .container .right-section{float:left; width:396px;}
-#container .container .right-section p{font-size:18px;margin-bottom:8px; color:#000;}
-#container .container .right-section h3{color:#000; font-size:20px; margin:20px 0;}
+#container .container .right-section{float:left; width:65%; height:520px; padding-top:30px;}
+#container .container .right-sec-contain p{font-size:18px;margin-bottom:8px; color:#000;}
+#container .container .right-sec-contain h3{color:#000; font-size:20px; margin:20px 0;}
+
+.container .birth-quest1{text-align:center !important; border-bottom: 1px solid #001100;}
+
+/*personalize*/
+#demo_date{width:138px; height:23px;-webkit-border-radius: 10px;-moz-border-radius: 10px; border-radius: 10px; border:none; padding:10px;}
+
+/*vital*/
+
+.vital-form{width:100%;}
+.trackers .vital-form p{width:44%; float:left; font-family:Arial, Helvetica, sans-serif; font-size:17px !important; color:#5b5b5b !important;}
+.vital-form span{font-size:20px !important;}
+#weight{width:140px; height:23px;-webkit-border-radius: 10px;-moz-border-radius: 10px; border-radius: 10px; border:none; padding:10px; }
+#heart_rate{width:140px; height:23px;-webkit-border-radius: 10px;-moz-border-radius: 10px; border-radius: 10px; border:none; padding:10px;}
+#blood1{width:85px; height:23px;-webkit-border-radius: 10px;-moz-border-radius: 10px; border-radius: 10px; border:none; padding:10px; }
+#blood2{width:85px; height:23px;-webkit-border-radius: 10px;-moz-border-radius: 10px; border-radius: 10px; border:none; padding:10px;}
+#urine_protein{width:140px;-webkit-border-radius: 10px;-moz-border-radius: 10px; border-radius: 10px; border:none; padding:10px; }
+
+#showjournal{width:100%;}
+#showjournal td{font-size:15px !important; width:50%; padding-bottom:10px;}
+#showjournal span{margin-left:20px;}
+
+
+.contractions-tab table{padding-top:10px; float:left; text-align:left;}
+.contractions-tab table #show1{margin-left:58px;}
+.contractions-tab table #show2{margin-left:58px;}
+.contractions-tab table #show3{margin-left:58px;}
+
+/*faq*/
+.faq{margin:0 auto;}
+.faq li a{font-size:14px !important; font-weight:normal;}
+.faq1 h4{font-size:18px; font-family:Arial, Helvetica, sans-serif; color:#000;}
+.faq1 p{font-size:16px; font-family:Arial, Helvetica, sans-serif; color:#000; line-height:20px; margin-top:20px;}
+.faq1 h6{color:#000; font-size:18px; margin:5px 0 10px 0;}
+#container .faq1 ol{list-style-type: decimal;padding-left: 20px;}
+#container .container ol li{overflow:visible; font-size:16px; font-weight:normal;}
+
+.hold1{margin:0 auto; text-align:center; width:50%; display:block; float:none; font-size:35px; color:#FFF; }
+
+/*faq*/
+
 
 
 /*readio-btn csss*/
@@ -121,6 +163,9 @@ a:hover{ color:#000000;}
 .demo input[type="radio"] {
    position: absolute;
    top: -9999px;
-   left: -9999px;
+   left: -9999px; 
 }
 /*readio-btn csss*/
+
+
+.trackers li{float:left;}

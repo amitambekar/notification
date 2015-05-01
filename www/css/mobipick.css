@@ -2,7 +2,7 @@
   padding: .5em;
 }
 .mobipick-date-formatted {
-	min-height:10px; /* clock image is 40 px */ 
+	min-height:40px; /* clock image is 40 px */ 
 	padding:1em 0 0 40px; /* clock image is 40 px */ 
 	background:url(images/clock.png) 3px no-repeat;
 	border-bottom:1px solid #fff;
@@ -52,7 +52,7 @@ li.mobipick-hide {
 	text-align:center;
 	background-color:#fff;
 	border:1px solid #B3B3B3;
-	font:bold 1.8em red,Arial,sans-serif;
+	font:bold 1.8em Helvetica,Arial,sans-serif;
 	-webkit-appearance:none;
 	-webkit-border-radius:0
 }

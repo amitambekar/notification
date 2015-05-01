@@ -5,7 +5,9 @@
 <title>Image-1</title>
 <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 <link href="css/global.css" rel="stylesheet" type="text/css" />
-<link href="css/print.css" rel="stylesheet" type="text/css" />
+<link href="css/print.css" rel="stylesheet" type="text/css">
+<link id="pagestyle" rel="stylesheet" type="text/css" href="css/green.css">
+<script src="js/css_loader.js"></script>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link href="css/responsive.css" rel="stylesheet" type="text/css">
 </head>
@@ -15,8 +17,8 @@
   <div id="header">
     <div class="container">
       <ul class="reset">
-        <li><a href="my_baby.html">Prev</a></li>
-        <li><a href="#" class="hold">Week 2</a></li>
+        <li><a href="#">Prev</a></li>
+        <li><a href="#" class="hold">My Baby</a></li>
         <li class="last-child"><a href="my_baby_2.html">Next</a></li>
       </ul>
       <div class="clear"></div>
@@ -25,17 +27,19 @@
   <div id="container">
     <div class="container">
       	<div class="about-baby">
-            <img src="images/baby_1.jpg">
-            <h1> 1st Stage</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam facilisis eleifend orci, vel sagittis tortor aliquet nec. Nam sed mi interdum, accumsan lacus a, varius lorem. Nam ut mi ligula. Nunc condimentum maximus arcu, eget pharetra eros fermentum ac. Praesent non condimentum ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur convallis ex id mauris lacinia, sed tincidunt nisl dignissim.</p>
+            <img src="images/week-1.png">
+            <h1> Week 1</h1>
+            <p> Approximately 7days after fertilization, the
+rapidly dividing ball of cells, now called a blastcyst, enters the uterus. The endomertrium, or uterine lining, has prepared itself for potential pregnancy. The blastocyst burrows deep into the uterine lining, a process called implantation.</p>
             </div>
       	</div>
      </div>
+  <script src="js/baby_age.js"></script>
   <div id="footer">
   		<div class="container">
   			<ul class="reset">
             	<li><a href="index.html"><img src="images/home.jpg"></a></li>
-                <li><a href="my_baby.html"><img src="images/my-baby.jpg"></a></li>
+                <li><a onclick="baby_age_call();"><img src="images/my-baby.jpg"></a></li>
                 <li><a href="trackers.html"><img src="images/trackers.jpg"></a></li>
                 <li><a href="take_photo.html"><img src="images/photo.jpg"></a></li>
                 <li><a href="personalize.html"><img src="images/personalize.jpg"></a></li>

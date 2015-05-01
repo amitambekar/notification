@@ -1,0 +1,128 @@
+/*** GLOBAL SETTING ***/
+body {margin:0; padding:0;font:normal 13px Arial, Helvetica, sans-serif; color:#5b5b5b; line-height:normal;}
+
+/*** GLOBAL SELECTORS ***/
+a{ color:#c81221; }
+a:hover{ color:#000000;} 
+
+/*Main COntent*/
+#wrapper{ width:100%; margin:0 auto;}
+
+.container{width:667px; padding:0 10px; margin:0 auto;}
+
+#header{width:100%; background:#161816;}
+
+#header .container li{float:left; margin-right:135px;}
+#header .container li a{font-size:24px; color:#568b4d; display:block; padding:8px 22px; }
+#header .container li a.hold{color:#ffffff; font-weight:bold;}
+#header .container li.last-child{margin:0;}
+
+#container{background:#b7ddb9; width:100%; padding-bottom:120px;}
+#container .container{padding-top:10px;}
+#container .container h1{font-size:30px; color:#000; margin-bottom:20px;}
+
+#container .container li{margin-bottom:10px;font-size:20px;color:#000; font-weight:bold; overflow:hidden  }
+#container .container li label{margin-right:20px; line-height:45px; width:207px; display:block; float:left; }
+#container .container li label.width100{margin-right:20px; line-height:45px; width:100px; display:block; float:left; font-size: 19px; font-weight: normal; }
+#container .container li .fieldlft{float:left;}
+
+#container .container li .input{border:1px solid #bdc5bd;-webkit-border-radius: 10px;-moz-border-radius: 10px; border-radius: 10px; padding:15px; width:375px;}
+#container .container li .width140{width:140px; margin-right:10px;}
+
+#container .container li span .input-2{margin-left:19px;}
+#container .container li span.btn{border:2px solid #568b4d; display:inline-block; -webkit-border-radius: 7px;-moz-border-radius: 7px; border-radius: 7px; width:407px; }
+
+#container .container li span.btn a{font-size:19px; color:#568b4d; display:block; padding:12px 0; text-align: center; width: 31%; float:left;}
+#container .container li span.btn a.unknown{color:#d9edda; background:#568b4d;}
+#container .container li span.btn .side-line{border-left:2px solid #568b4d; border-right:2px solid #568b4d;}
+
+#container .container ul.due-date{margin-top:35px;}
+#container .container li span.btn2{width:99%;}
+#container .container li.rightAlign{color:#568b4d; font-size:23px; margin-top: 20px;}
+
+#container .container h2{font-size:28px;color:#000; margin-bottom:20px;}
+
+#container .container .text{float:left; line-height: 42px; font-size: 19px; font-weight: normal;}
+#container .container .text-margin{ margin-right: 30px;}
+#container .container li.leftAlign{width:90%;}
+
+#container .container li.first-child{margin-top:15px; margin-bottom:0}
+#container .container li label.width160{margin-right:20px; margin-top:10px; width:160px; display:block; float:left; font-size: 22px; font-weight: normal; }
+#container .container li span.width291{width:291px;}
+
+#container .container li span.width291 a{width:50%;}
+
+#container .container .rest-text{text-align:center; color:#568b4d; font-size:40px; font-weight:bold; padding:80px 0;}
+
+#footer{width:100%; background:#f7f7f7; border-top:1px solid #809a81;position: fixed;bottom:0;}
+#footer .container li{float:left;}
+
+
+#header .container{padding:30px 0;}
+#header .container p{font-size:30px; text-align:center; color:#FFF; }
+
+#container .container .trackers li{float:left; margin-right:54px; margin-top:30px;}
+
+#container .container .about-baby{text-align:center;}
+#container .container .about-baby h1{margin:36px 0 21px;}
+#container .container .about-baby p{text-align:left; font-size:18px; color:#000;}
+
+#container .container .left_section{float:left; width:168px; margin-right:45px;}
+#container .container .left_section li.last-child{margin:0;}
+
+#container .container .right-section{float:left; width:396px;}
+#container .container .right-section p{font-size:18px;margin-bottom:8px; color:#000;}
+#container .container .right-section h3{color:#000; font-size:20px; margin:20px 0;}
+
+
+/*readio-btn csss*/
+
+.demo fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.demo legend {
+    padding: 0;
+    margin: 0;
+}
+.demo label {
+    cursor: pointer;
+    display: block;
+    float: left;
+    padding: .2em .4em;
+    background-color: #ccc;
+	width:150px !important;
+	margin:0px !important;
+	float:left;
+	border:2px solid #568b4d;
+    background: none repeat scroll 0 0 ;
+    color: #568b4d;
+}
+.demo label:first-child {
+    border-left-width: 1px;
+    border-top-left-radius: .2em;
+    border-bottom-left-radius: .2em;
+}
+.demo label:last-child {
+    border-top-right-radius: .2em;
+    border-bottom-right-radius: .2em;
+}
+.demo label.selected {
+    background-color: #0066CC;
+    color: white;
+    background: none repeat scroll 0 0 #568b4d;
+    color: #d9edda;
+}
+.demo label.warning.selected {
+    background-color: red;
+    border-color: darkred;
+}
+.demo input[type="radio"] {
+   position: absolute;
+   top: -9999px;
+   left: -9999px; 
+}
+/*readio-btn csss*/
+
+
