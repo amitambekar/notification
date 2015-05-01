@@ -182,8 +182,8 @@ var date = new Date();
     // Retrieve image file location from specified source
     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 75,
                                 destinationType: Camera.DestinationType.FILE_URI,
-								targetWidth: 480,
-								targetHeight:640,
+								targetWidth: 300,
+								targetHeight:400,
 								correctOrientation: true,
                                 saveToPhotoAlbum: false,
                                 allowEdit: false });
@@ -273,7 +273,7 @@ updateCameraImages : function(imageURI) {
 	  load_index_image();
 	  setTimeout(function(){
 	  window.location.href="index.html"; 
-	  }, 1500);
+	  }, 500);
 	  
 	   //insertItem(image_path);
        //fileEntry.moveTo(root_path, newName, FileIO.movedImageSuccess, FileIO.errorHandler);
