@@ -3,14 +3,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Pregnancy | Home</title>
-<script type="text/javascript" charset="utf-8" src="js/phonegap.js"></script>
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 <link href="css/global.css" rel="stylesheet" type="text/css" />
 <link href="css/print.css" rel="stylesheet" type="text/css">
 <link id="pagestyle" rel="stylesheet" type="text/css" href="css/green.css">
 <script src="js/css_loader.js"></script>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link href="css/responsive.css" rel="stylesheet" type="text/css">
-<script src="js/cordova-1.5.0.js" type="text/javascript" charset="utf-8"></script>
+<!--<script src="js/cordova-1.5.0.js" type="text/javascript" charset="utf-8"></script>-->
 <script type="text/javascript" charset="utf-8">
 
     var pictureSource;   // picture source
@@ -35,15 +35,16 @@
 	
 	
     function onDeviceReady() {
-		db =getDatabase();
+		pictureSource=navigator.camera.PictureSourceType;
+        destinationType=navigator.camera.DestinationType;
+	db =getDatabase();
 		////alert("onDeviceReady IN");
 		db.transaction(function (tx) {
 		tx.executeSql('CREATE TABLE IF NOT EXISTS take_photo ( id INTEGER PRIMARY KEY AUTOINCREMENT,img,date)');
 		}
 		, databaseError, getItems);
 		
-		pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
+
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, FileIO.gotFS, FileIO.errorHandler);
 		//alert("onDeviceReady OUT");
     }
@@ -185,7 +186,7 @@ var date = new Date();
 								targetHeight:640,
 								correctOrientation: true,
                                 saveToPhotoAlbum: false,
-                                allowEdit: true });
+                                allowEdit: false });
 }
 	
 	function getPhoto(source) {
