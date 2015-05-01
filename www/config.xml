@@ -64,8 +64,9 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
-	<gap:plugin name="org.apache.cordova.camera.CameraLauncher"/>
-
+<feature name="Camera">
+    <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+</feature>
 <!--
 	<plugins>
     <plugin name="App" value="org.apache.cordova.App"/>
