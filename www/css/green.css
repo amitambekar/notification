@@ -61,3 +61,38 @@ body {margin:0; padding:0;font:normal 13px Arial, Helvetica, sans-serif; color:#
 
 
 .faq .faq-btn {padding:15px; background:#FFF; opacity:0.80; color:#568b4d; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0; width:95%; display:block; text-align:center;}
+
+
+/*btn*/
+input[name=gender] + label, input[name=due_date] + label, input[name=units1] + label,input[name=quest1] + label,input[name=quest2] + label,input[name=quest3] + label,input[name=quest6] + label,input[name=quest7] + label,input[name=quest8] + label,input[name=quest9] + label,input[name=quest10] + label,input[name=quest11] + label,input[name=quest12] + label,input[name=quest13] + label,input[name=quest14] + label,input[name=quest15] + label,input[name=quest16] + label,input[name=quest17] + label,input[name=quest18] + label,input[name=quest19] + label,input[name=quest20] + label,input[name=quest21] + label,input[type=checkbox] + label {
+	display:inline-block;
+	margin:-2px;
+	padding: 4px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333;
+	text-align: center;
+	background: rgba(55,108,56,1);
+background: -moz-linear-gradient(top, rgba(55,108,56,1) 0%, rgba(55,108,56,1) 3%, rgba(81,134,82,1) 41%, rgba(123,173,124,1) 84%, rgba(123,173,124,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(55,108,56,1)), color-stop(3%, rgba(55,108,56,1)), color-stop(41%, rgba(81,134,82,1)), color-stop(84%, rgba(123,173,124,1)), color-stop(100%, rgba(123,173,124,1)));
+background: -webkit-linear-gradient(top, rgba(55,108,56,1) 0%, rgba(55,108,56,1) 3%, rgba(81,134,82,1) 41%, rgba(123,173,124,1) 84%, rgba(123,173,124,1) 100%);
+background: -o-linear-gradient(top, rgba(55,108,56,1) 0%, rgba(55,108,56,1) 3%, rgba(81,134,82,1) 41%, rgba(123,173,124,1) 84%, rgba(123,173,124,1) 100%);
+background: -ms-linear-gradient(top, rgba(55,108,56,1) 0%, rgba(55,108,56,1) 3%, rgba(81,134,82,1) 41%, rgba(123,173,124,1) 84%, rgba(123,173,124,1) 100%);
+background: linear-gradient(to bottom, rgba(55,108,56,1) 0%, rgba(55,108,56,1) 3%, rgba(81,134,82,1) 41%, rgba(123,173,124,1) 84%, rgba(123,173,124,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#376c38', endColorstr='#7bad7c', GradientType=0 );
+	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	background-color:#e0e0e0;
+}
+input[name=gender]:checked + label, input[name=due_date]:checked + label, input[name=units1]:checked + label,input[name=quest1]:checked + label,input[name=quest2]:checked + label,input[name=quest3]:checked + label,input[name=quest6]:checked + label,input[name=quest7]:checked + label,input[name=quest8]:checked + label,input[name=quest9]:checked + label,input[name=quest10]:checked + label,input[name=quest11]:checked + label,input[name=quest12]:checked + label,input[name=quest13]:checked + label,input[name=quest14]:checked + label,input[name=quest15]:checked + label,input[name=quest16]:checked + label,input[name=quest17]:checked + label,input[name=quest18]:checked + label,input[name=quest19]:checked + label,input[name=quest20]:checked + label,input[name=quest21]:checked + label, input[type=checkbox]:checked + label {
+	background:background: rgba(153,214,141,1);
+background: -moz-linear-gradient(top, rgba(153,214,141,1) 0%, rgba(153,214,141,1) 2%, rgba(133,209,117,1) 36%, rgba(123,224,105,1) 61%, rgba(178,227,168,1) 99%, rgba(178,227,168,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(153,214,141,1)), color-stop(2%, rgba(153,214,141,1)), color-stop(36%, rgba(133,209,117,1)), color-stop(61%, rgba(123,224,105,1)), color-stop(99%, rgba(178,227,168,1)), color-stop(100%, rgba(178,227,168,1)));
+background: -webkit-linear-gradient(top, rgba(153,214,141,1) 0%, rgba(153,214,141,1) 2%, rgba(133,209,117,1) 36%, rgba(123,224,105,1) 61%, rgba(178,227,168,1) 99%, rgba(178,227,168,1) 100%);
+background: -o-linear-gradient(top, rgba(153,214,141,1) 0%, rgba(153,214,141,1) 2%, rgba(133,209,117,1) 36%, rgba(123,224,105,1) 61%, rgba(178,227,168,1) 99%, rgba(178,227,168,1) 100%);
+background: -ms-linear-gradient(top, rgba(153,214,141,1) 0%, rgba(153,214,141,1) 2%, rgba(133,209,117,1) 36%, rgba(123,224,105,1) 61%, rgba(178,227,168,1) 99%, rgba(178,227,168,1) 100%);
+background: linear-gradient(to bottom, rgba(153,214,141,1) 0%, rgba(153,214,141,1) 2%, rgba(133,209,117,1) 36%, rgba(123,224,105,1) 61%, rgba(178,227,168,1) 99%, rgba(178,227,168,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99d68d', endColorstr='#b2e3a8', GradientType=0 );
+}

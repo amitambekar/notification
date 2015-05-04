@@ -68,3 +68,35 @@ body {margin:0; padding:0;font:normal 13px Arial, Helvetica, sans-serif; color:#
 
 
 .faq .faq-btn {padding:15px; background:#FFF; opacity: 0.80; color:#63a8fa; font-size:16px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px; border:1px solid #aeb8b0; width:95%; display:block; text-align:center;}
+
+
+input[name=gender] + label, input[name=due_date] + label, input[name=units1] + label,input[name=quest1] + label,input[name=quest2] + label,input[name=quest3] + label,input[name=quest6] + label,input[name=quest7] + label,input[name=quest8] + label,input[name=quest9] + label,input[name=quest10] + label,input[name=quest11] + label,input[name=quest12] + label,input[name=quest13] + label,input[name=quest14] + label,input[name=quest15] + label,input[name=quest16] + label,input[name=quest17] + label,input[name=quest18] + label,input[name=quest19] + label,input[name=quest20] + label,input[name=quest21] + label,input[type=checkbox] + label {
+	display:inline-block;
+	margin:-2px;
+	padding: 4px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333;
+	text-align: center;
+	line-height: 17px;
+    color: #fff;
+	background: rgba(149,196,254,1);
+background: -moz-linear-gradient(top, rgba(149,196,254,1) 0%, rgba(149,196,254,1) 2%, rgba(126,181,248,1) 41%, rgba(98,163,243,1) 61%, rgba(59,140,239,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(149,196,254,1)), color-stop(2%, rgba(149,196,254,1)), color-stop(41%, rgba(126,181,248,1)), color-stop(61%, rgba(98,163,243,1)), color-stop(100%, rgba(59,140,239,1)));
+background: -webkit-linear-gradient(top, rgba(149,196,254,1) 0%, rgba(149,196,254,1) 2%, rgba(126,181,248,1) 41%, rgba(98,163,243,1) 61%, rgba(59,140,239,1) 100%);
+background: -o-linear-gradient(top, rgba(149,196,254,1) 0%, rgba(149,196,254,1) 2%, rgba(126,181,248,1) 41%, rgba(98,163,243,1) 61%, rgba(59,140,239,1) 100%);
+background: -ms-linear-gradient(top, rgba(149,196,254,1) 0%, rgba(149,196,254,1) 2%, rgba(126,181,248,1) 41%, rgba(98,163,243,1) 61%, rgba(59,140,239,1) 100%);
+background: linear-gradient(to bottom, rgba(149,196,254,1) 0%, rgba(149,196,254,1) 2%, rgba(126,181,248,1) 41%, rgba(98,163,243,1) 61%, rgba(59,140,239,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95c4fe', endColorstr='#3b8cef', GradientType=0 );
+}
+input[name=gender]:checked + label, input[name=due_date]:checked + label, input[name=units1]:checked + label,input[name=quest1]:checked + label,input[name=quest2]:checked + label,input[name=quest3]:checked + label,input[name=quest6]:checked + label,input[name=quest7]:checked + label,input[name=quest8]:checked + label,input[name=quest9]:checked + label,input[name=quest10]:checked + label,input[name=quest11]:checked + label,input[name=quest12]:checked + label,input[name=quest13]:checked + label,input[name=quest14]:checked + label,input[name=quest15]:checked + label,input[name=quest16]:checked + label,input[name=quest17]:checked + label,input[name=quest18]:checked + label,input[name=quest19]:checked + label,input[name=quest20]:checked + label,input[name=quest21]:checked + label, input[type=checkbox]:checked + label {
+	background: rgba(95,164,248,1);
+background: -moz-linear-gradient(top, rgba(95,164,248,1) 0%, rgba(95,164,248,1) 2%, rgba(137,184,241,1) 50%, rgba(130,186,255,1) 86%, rgba(149,196,254,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(95,164,248,1)), color-stop(2%, rgba(95,164,248,1)), color-stop(50%, rgba(137,184,241,1)), color-stop(86%, rgba(130,186,255,1)), color-stop(100%, rgba(149,196,254,1)));
+background: -webkit-linear-gradient(top, rgba(95,164,248,1) 0%, rgba(95,164,248,1) 2%, rgba(137,184,241,1) 50%, rgba(130,186,255,1) 86%, rgba(149,196,254,1) 100%);
+background: -o-linear-gradient(top, rgba(95,164,248,1) 0%, rgba(95,164,248,1) 2%, rgba(137,184,241,1) 50%, rgba(130,186,255,1) 86%, rgba(149,196,254,1) 100%);
+background: -ms-linear-gradient(top, rgba(95,164,248,1) 0%, rgba(95,164,248,1) 2%, rgba(137,184,241,1) 50%, rgba(130,186,255,1) 86%, rgba(149,196,254,1) 100%);
+background: linear-gradient(to bottom, rgba(95,164,248,1) 0%, rgba(95,164,248,1) 2%, rgba(137,184,241,1) 50%, rgba(130,186,255,1) 86%, rgba(149,196,254,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fa4f8', endColorstr='#95c4fe', GradientType=0 );
+}
