@@ -4,8 +4,7 @@ var iOS = false,
 if( p === 'iPad' || p === 'iPhone' || p === 'iPod' ){
     iOS = true;
 	alert(iOS);
-		border-top:20px solid #FFF;
-		document.getElementById("myDiv").style.borderTop = "thick solid #0000FF";
+	document.getElementById("header").style.borderTop = "border-top:20px solid #FFF";
 }
 
 
