@@ -33,7 +33,7 @@ a:hover {
 	top:0;
 	padding:.5% 0;
 	z-index:9999;
-	border-top:20px solid #FFF;
+
 }
 #header .container li {
 	float:left;
@@ -392,11 +392,11 @@ a:hover {
 
 /*radio-btn */
 span.bg-color label{width:30% !important; float: right !important; margin-right: 0 !important;}
-.fieldlft span.btn label, #container .container li span.width291 label{width:26.9% !important; margin:0 !important; }
+.fieldlft span.btn label, #container .container li span.width291 label{width:24% !important; margin:0 !important; }
 #container .container ul.due-date li.date{width:28%; float:left;}
 #container .container li span.width290{width:100%;}
 #container .container li span.width166 label{width:43.6% !important;}
-span.bg-color{width:50%; float:right;}
+span.bg-color{width: 73%; float: right;  margin-top: 10px;}
 input[name=gender], input[name=due_date], input[name=units1],  input[name=quest1], input[name=quest2],input[name=quest3],input[name=quest6],input[name=quest7],input[name=quest8],input[name=quest9],input[name=quest10],input[name=quest11],input[name=quest12],input[name=quest13],input[name=quest14],input[name=quest15],input[name=quest16],input[name=quest17],input[name=quest18],input[name=quest19],input[name=quest20],input[name=quest21], input[type=checkbox] {
 	display:none;
 }

@@ -67,7 +67,6 @@ body {margin:0; padding:0;font:normal 13px Arial, Helvetica, sans-serif; color:#
 input[name=gender] + label, input[name=due_date] + label, input[name=units1] + label,input[name=quest1] + label,input[name=quest2] + label,input[name=quest3] + label,input[name=quest6] + label,input[name=quest7] + label,input[name=quest8] + label,input[name=quest9] + label,input[name=quest10] + label,input[name=quest11] + label,input[name=quest12] + label,input[name=quest13] + label,input[name=quest14] + label,input[name=quest15] + label,input[name=quest16] + label,input[name=quest17] + label,input[name=quest18] + label,input[name=quest19] + label,input[name=quest20] + label,input[name=quest21] + label,input[type=checkbox] + label {
 	display:inline-block;
 	margin:-2px;
-	padding: 4px 12px;
 	margin-bottom: 0;
 	font-size: 14px;
 	line-height: 20px;

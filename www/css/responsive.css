@@ -59,7 +59,7 @@
 	}
 	
 @media only screen and ( max-width: 480px ) {
-	.container {width: 445px;}
+	.container {width: 443px;}
 	#header .container li{margin-right:56px;}
 	#header .container li a{padding: 8px 10px;}
 	#demo_datetime{margin:0; width:53%;}
@@ -68,6 +68,10 @@
 	#container .container .right-section{width:69%; height:50%;}
 	.right-sec-contain{margin-left:33%;}
 	.about-baby img{width:50%}
+	#container .container ul.due-date li.date {width: 34%; float: none;}
+	#container .container li span.btn {width: 408px;}
+	#container .container li label.width100{width: 75px;}
+	#container .container li .width140 {width: 68px !important;}
 	#showkicks th{width:37%;}
 	#add_entry{width:42%;}
 	#start{width:42%;}
@@ -109,7 +113,7 @@
 	#showjournal span{margin-left:2px;}
 	.appointment{width:100%;}
 	.contractions-btn{width:110px;}
-	
+	#container .container li .width140 {width: 43px !important;}
 }
 @media only screen and ( max-width: 384px ) {
 	.container {width: 335px;}
@@ -140,7 +144,11 @@
 	#add{margin-left:10px;}
 	.faq1 h6{font-size:16px;}
 	#add_entry{width:55%;}
-		}
+	span.bg-color {width: 89%;}
+	#container .container li span.width291 {width: 425px !important;}
+	input[name=gender] + label, input[name=due_date] + label, input[name=units1] + label, input[name=quest1] + label, input[name=quest2] + label, input[name=quest3] + label, input[name=quest6] + label, input[name=quest7] + label, input[name=quest8] + label, input[name=quest9] + label, input[name=quest10] + label, input[name=quest11] + label, input[name=quest12] + label, input[name=quest13] + label, input[name=quest14] + label, input[name=quest15] + label, input[name=quest16] + label, input[name=quest17] + label, input[name=quest18] + label, input[name=quest19] + label, input[name=quest20] + label, input[name=quest21] + label, input[type=checkbox] + label{padding:4px;}
+	#container .container ul.due-date li.date {width: 60%;}
+}
 @media only screen and ( max-width: 375px ) {
 	.container {width: 338px;}
 	#header .container li a {font-size: 20px;}
@@ -164,6 +172,12 @@
 	#container .container .right-sec-contain p{font-size:16px;}
 	.faq .faq-btn{width:80%; margin:0 auto; float:none;}
 	.faq1 h6{font-size:15px;}
+}
+
+@media only screen and ( max-width: 360px ) {
+	.container {width: 321px;}
+	span.bg-color{width: 100%;}
+	#container .container li .width140 {width: 26px !important;}
 }
 @media only screen and ( max-width: 320px ) {
 	.container {width: 280px;}
@@ -190,3 +204,4 @@
 #container .container .text-margin{margin-right:6px;}
 #container .container li .width140{width:20px !important;}
 #container .container li .width140{margin-right:1px;}	
+}

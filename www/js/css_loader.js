@@ -1,3 +1,14 @@
+var iOS = false,
+    p = navigator.platform;
+
+if( p === 'iPad' || p === 'iPhone' || p === 'iPod' ){
+    iOS = true;
+	alert(iOS);
+		border-top:20px solid #FFF;
+		document.getElementById("myDiv").style.borderTop = "thick solid #0000FF";
+}
+
+
 var css_page_on_load = localStorage.getItem('css_page') || '';
 css_onload(css_page_on_load);
 function css_onload(sheet){
