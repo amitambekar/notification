@@ -117,7 +117,7 @@
     <gap:splash src="res/screen/ios/splash.png"           gap:platform="ios"     width="1024" height="768" />
     <gap:splash src="res/screen/windows-phone/splash.png" gap:platform="winphone" />
 <preference name="splashscreen" value="splash" />
-<preference name="splashScreenDelay" value="1000" />
+<preference name="splashScreenDelay" value="2000" />
 
 
 
