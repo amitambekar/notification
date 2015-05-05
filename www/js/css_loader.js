@@ -3,8 +3,8 @@ var iOS = false,
 
 if( p === 'iPad' || p === 'iPhone' || p === 'iPod' ){
     iOS = true;
-	alert(iOS);
-	document.getElementById("header").style.borderTop = "border-top:20px solid #FFF";
+	//alert(iOS);
+	document.getElementById("header").style.borderTop = "20px solid #FFF";
 }
 
 

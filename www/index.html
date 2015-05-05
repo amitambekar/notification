@@ -184,7 +184,7 @@ var date = new Date();
                                 destinationType: Camera.DestinationType.FILE_URI,
 								targetWidth: 360,
 								targetHeight:480,
-								correctOrientation: true,
+								correctOrientation: false,
                                 saveToPhotoAlbum: false,
                                 allowEdit: false });
 }
@@ -441,7 +441,7 @@ function showAlert() {
           <li class="last-child"><a class="faq" href="faq.html"><img id="faq" src="images/faqs.png"></a></li>
         </ul>
       </div>
-      <div class="right-section" > <a href="javascript:void(0);" onclick="capturePhoto();"><img id="imgMain" src="images/photo-frame.png" onload="load_index_image();" style="width: 100%;  height: 100%;"></a></div>
+      <div class="right-section" > <a href="javascript:void(0);" onclick="capturePhoto();"><img id="imgMain" src="images/photo-frame.png" onload="load_index_image();" style=""></a></div>
       <div class="right-sec-contain">
         <form id="indexform" method="POST">
           <p> Due date: <span id="due_date"></span></p>

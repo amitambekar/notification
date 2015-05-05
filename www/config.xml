@@ -102,17 +102,49 @@
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />
 -->
-<gap:splash src="icon.png"       gap:platform="android" gap:qualifier="port-ldpi" />
-    <gap:splash src="icon.png"       gap:platform="android" gap:qualifier="port-mdpi" />
-    <gap:splash src="icon.png"       gap:platform="android" gap:qualifier="port-hdpi" />
-    <gap:splash src="icon.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
-    <gap:splash src="icon.png"              gap:platform="blackberry" />
-    <gap:splash src="icon.png"         gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="icon.png"      gap:platform="ios"     width="640" height="960" />
-    <gap:splash src="icon.png" gap:platform="ios"     width="640" height="1136" />
-    <gap:splash src="icon.png"           gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="icon.png"          gap:platform="ios"     width="1024" height="768" />
-    <gap:splash src="icon.png"      gap:platform="winphone" />
+<!--	<gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-ldpi" />
+    <gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-mdpi" />
+    <gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-hdpi" />
+    <gap:splash src="splash.png" gap:platform="android" gap:qualifier="port-xhdpi" />
+    <gap:splash src="splash.png" gap:platform="blackberry" />
+    <gap:splash src="splash.png" gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="splash.png" gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="splash.png" gap:platform="ios"     width="640" height="1136" />
+    <gap:splash src="splash.png" gap:platform="ios"     width="768" height="1024" />
+    <gap:splash src="splash.png" gap:platform="ios"     width="1024" height="768" />
+    <gap:splash src="splash.png" gap:platform="winphone" />-->
+	
+<platform name="android">
+    <!-- you can use any density that exists in the Android project -->
+    <splash src="splash.png" density="land-hdpi"/>
+    <splash src="splash.png" density="land-ldpi"/>
+    <splash src="splash.png" density="land-mdpi"/>
+    <splash src="splash.png" density="land-xhdpi"/>
+    <splash src="splash.png" density="port-hdpi"/>
+    <splash src="splash.png" density="port-ldpi"/>
+    <splash src="splash.png" density="port-mdpi"/>
+    <splash src="splash.png" density="port-xhdpi"/>
+</platform>
+<platform name="android">
+	<icon src="icon.png" density="ldpi" />
+    <icon src="icon.png" density="mdpi" />
+    <icon src="icon.png" density="hdpi" />
+    <icon src="icon.png" density="xhdpi" />
+</platform>
+<platform name="ios">
+    <!-- images are determined by width and height. The following are supported -->
+    <splash src="splash.png" width="320" height="480"/>
+    <splash src="splash.png" width="640" height="960"/>
+    <splash src="splash.png" width="768" height="1024"/>
+    <splash src="splash.png" width="1536" height="2048"/>
+    <splash src="splash.png" width="1024" height="768"/>
+    <splash src="splash.png" width="2048" height="1536"/>
+    <splash src="splash.png" width="640" height="1136"/>
+    <splash src="splash.png" width="750" height="1334"/>
+    <splash src="splash.png" width="1242" height="2208"/>
+    <splash src="splash.png" width="2208" height="1242"/>
+</platform>
+	
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
     <string>100</string>
     </gap:config-file>
