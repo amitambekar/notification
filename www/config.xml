@@ -79,7 +79,12 @@
 
     <!-- Define app splash screen for each platform. -->
     <splash src="splash.png"/>
-<preference name="SplashScreenDelay" value="10000" />
+<preference name="splashscreen" value="splash" />
+<preference name="splashScreenDelay" value="10000" />
+
+<feature name="SplashScreen">
+   <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+</feature>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
     <string>100</string>

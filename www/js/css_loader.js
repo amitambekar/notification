@@ -6,7 +6,10 @@ if( p === 'iPad' || p === 'iPhone' || p === 'iPod' ){
 	//alert(iOS);
 	document.getElementById("header").style.borderTop = "20px solid #FFF";
 }
-
+else
+{
+		document.getElementById("header").style.borderTop = "20px solid #FFF";
+}
 
 var css_page_on_load = localStorage.getItem('css_page') || '';
 css_onload(css_page_on_load);
