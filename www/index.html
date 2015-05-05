@@ -108,7 +108,7 @@ document.getElementById("due_date").innerHTML = a1;
 			{
 			days_use = 'day';
 			}
-			//console.log(diffDays+" baby age");
+			console.log(diffDays+" baby age");
 			document.getElementById("baby_age").innerHTML = baby_weeks.toFixed(0)+" "+weeks_use+" "+baby_days+" "+days_use+" old";
 			baby_age1 = baby_weeks.toFixed(0);
 			localStorage.setItem("baby_age_redirect", baby_age1);
@@ -116,7 +116,7 @@ document.getElementById("due_date").innerHTML = a1;
 		    //console.log(a+"A");
 		    var r_date = new Date(a);
             var preg_day = Math.round(Math.abs((r_date.getTime() - c_date.getTime()) / (oneDay)));
-            //console.log(preg_day+" remaining days"); 
+            console.log(preg_day+" remaining days"); 
 			var remaining_weeks = preg_day / 7 ;
 			var remaining_days = preg_day % 7 ;
 			var weeks_r_use='';
