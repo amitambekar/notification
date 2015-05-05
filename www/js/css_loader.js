@@ -8,7 +8,7 @@ if( p === 'iPad' || p === 'iPhone' || p === 'iPod' ){
 }
 else
 {
-		document.getElementById("header").style.borderTop = "20px solid #FFF";
+		//document.getElementById("header").style.borderTop = "20px solid #FFF";
 }
 
 var css_page_on_load = localStorage.getItem('css_page') || '';
