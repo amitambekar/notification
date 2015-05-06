@@ -11,29 +11,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link href="css/responsive.css" rel="stylesheet" type="text/css">
 <!--<script src="js/cordova-1.5.0.js" type="text/javascript" charset="utf-8"></script>-->
-
 </head>
-<body onload="onDeviceReady();">
-<div id="wrapper">
-<div id="header">
-    <div class="container">
-		<div style="float:left;"><button class="take_photo_button" onclick="capturePhoto();" >Take Photo</button></div>
-		<div style="float:right;"><button class="take_photo_button" onclick="get_from_gallery();">Get Photo</button></div>
-        <div class="clear"></div>
-		<div class="about-baby">
-		<!--<input type="text" id="showdata">-->
-<!--			<center><img style="display:none;width:100%;" id="smallImage" src="" /></center>
-			<center><img style="display:none;" id="largeImage" src="" /></center>-->
-			<!--<center><img src="" id="demo_image"/></center>-->
-			
-			<!--<input type="text" name="set_image_path" id="set_image_path" value=""><input type="button" value="Click" onclick="set_path_of_image(1);">-->
-			<table id="show_images" width="100%"></table>
-		</div>
-			
-      	</div>
-</div>
-
-<script src="js/css_loader.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     var pictureSource;   // picture source
@@ -94,9 +72,11 @@ function querySuccess(tx,results)
 		output = output + '<tr><td width="50%"><img src="' + results.rows.item(i).img + '" id=show_db_image_' + results.rows.item(i).id + '></td></tr>';
 	} 
 
-	//alert('Output='+output);
-
-	document.getElementById("show_images").innerHTML = output;
+	alert('Output='+output);
+	setTimeout(function(){
+	  document.getElementById("show_images").innerHTML = output;
+	  }, 1000);
+	
 	//alert("Exit querySuccess");
 }
 
@@ -297,6 +277,28 @@ document.getElementById("show_db_image_"+id).src = a ;
 }
 */
 </script>
+<body onload="onDeviceReady();">
+<div id="wrapper">
+<div id="header">
+    <div class="container">
+		<div style="float:left;"><button class="take_photo_button" onclick="capturePhoto();" >Take Photo</button></div>
+		<div style="float:right;"><button class="take_photo_button" onclick="get_from_gallery();">Get Photo</button></div>
+        <div class="clear"></div>
+		<div class="about-baby">
+		<!--<input type="text" id="showdata">-->
+<!--			<center><img style="display:none;width:100%;" id="smallImage" src="" /></center>
+			<center><img style="display:none;" id="largeImage" src="" /></center>-->
+			<!--<center><img src="" id="demo_image"/></center>-->
+			
+			<!--<input type="text" name="set_image_path" id="set_image_path" value=""><input type="button" value="Click" onclick="set_path_of_image(1);">-->
+			
+		</div>
+			<table id="show_images" width="100%"></table>
+      	</div>
+</div>
+
+<script src="js/css_loader.js"></script>
+
 <script src="js/baby_age.js"></script>
   <div id="footer">
   		<div class="container">
