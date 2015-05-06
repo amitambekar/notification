@@ -69,13 +69,13 @@ function querySuccess(tx,results)
 
 		for(var i=0; i < len ; i++)
 	{
-		output = output + '<tr><td width="50%"><img src="' + results.rows.item(i).img + '" id=show_db_image_' + results.rows.item(i).id + '></td></tr>';
+	 output = output + '<tr><td width="80%" style="text-align:center;"><img src="' + results.rows.item(i).img + '" id=show_db_image_' + results.rows.item(i).id + '></td></tr>';
 	} 
 
-	alert('Output='+output);
+	//alert('Output='+output);
 	setTimeout(function(){
 	  document.getElementById("show_images").innerHTML = output;
-	  }, 1000);
+	  }, 500);
 	
 	//alert("Exit querySuccess");
 }
@@ -280,22 +280,27 @@ document.getElementById("show_db_image_"+id).src = a ;
 <body onload="onDeviceReady();">
 <div id="wrapper">
 <div id="header">
+
     <div class="container">
 		<div style="float:left;"><button class="take_photo_button" onclick="capturePhoto();" >Take Photo</button></div>
 		<div style="float:right;"><button class="take_photo_button" onclick="get_from_gallery();">Get Photo</button></div>
         <div class="clear"></div>
+		</div>
+	</div>
 		<div class="about-baby">
+		<div class="container">
 		<!--<input type="text" id="showdata">-->
 <!--			<center><img style="display:none;width:100%;" id="smallImage" src="" /></center>
 			<center><img style="display:none;" id="largeImage" src="" /></center>-->
 			<!--<center><img src="" id="demo_image"/></center>-->
 			
 			<!--<input type="text" name="set_image_path" id="set_image_path" value=""><input type="button" value="Click" onclick="set_path_of_image(1);">-->
-			<table id="show_images" width="100%"></table>			
+			<table id="show_images" width="100%"></table></center>			
+		</div>
 		</div>
 
-      	</div>
-</div>
+      	
+
 
 <script src="js/css_loader.js"></script>
 
