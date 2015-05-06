@@ -19,7 +19,7 @@ a:hover {
 	margin:0 auto;
 }
 #container {
-	padding-top:4%;
+	padding-top:6%!important;
 }
 .container {
 	width:667px;
@@ -213,6 +213,7 @@ a:hover {
 #container .container .about-baby {
 	text-align:center;
 }
+.about-baby .container{padding:0;margin-top:80px;}
 #container .container .about-baby h1 {
 	margin:36px 0 21px;
 }

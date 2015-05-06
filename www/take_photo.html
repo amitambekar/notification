@@ -71,7 +71,12 @@ function querySuccess(tx,results)
 	{
 	 output = output + '<tr><td width="80%" style="text-align:center;"><img src="' + results.rows.item(i).img + '" id=show_db_image_' + results.rows.item(i).id + '></td></tr>';
 	} 
-
+//output = output + '<tr><td width="80%" style="text-align:center;"><img src="images/amit.jpg" id=show_db_image_1></td></tr>';
+//output = output + '<tr><td width="80%" style="text-align:center;"><img src="images/amit.jpg" id=show_db_image_1></td></tr>';
+//output = output + '<tr><td width="80%" style="text-align:center;"><img src="images/amit.jpg" id=show_db_image_1></td></tr>';
+//output = output + '<tr><td width="80%" style="text-align:center;"><img src="images/amit.jpg" id=show_db_image_1></td></tr>';
+//output = output + '<tr><td width="80%" style="text-align:center;"><img src="images/amit.jpg" id=show_db_image_1></td></tr>';
+//output = output + '<tr><td width="80%" style="text-align:center;"><img src="images/amit.jpg" id=show_db_image_1></td></tr>';
 	//alert('Output='+output);
 	setTimeout(function(){
 	  document.getElementById("show_images").innerHTML = output;
@@ -97,7 +102,7 @@ var date = new Date();
 
 	function databaseError(error)
 {
-	////alert("DATABASE Error:"+ error.code);	
+	alert("DATABASE Error:"+ error.code);	
 }
 	
     function capturePhoto() {
@@ -259,7 +264,7 @@ updateCameraImages : function(imageURI) {
                msg = e.code;
         break;
  };
-      //alert('Error: ' + msg);
+      alert('Error: ' + msg);
  }
 }
 	
