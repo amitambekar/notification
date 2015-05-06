@@ -78,9 +78,9 @@ function querySuccess(tx,results)
 //output = output + '<tr><td width="80%" style="text-align:center;"><img src="images/amit.jpg" id=show_db_image_1></td></tr>';
 //output = output + '<tr><td width="80%" style="text-align:center;"><img src="images/amit.jpg" id=show_db_image_1></td></tr>';
 	//alert('Output='+output);
-	setTimeout(function(){
+	
 	  document.getElementById("show_images").innerHTML = output;
-	  }, 500);
+	  
 	
 	//alert("Exit querySuccess");
 }
@@ -220,7 +220,9 @@ updateCameraImages : function(imageURI) {
 	   var image_path = window.appRootDir.toURL() +'/'+newName;
 	  ////alert('Image Path='+image_path);
 	   insertItem(image_path);
-	   
+	   setTimeout(function(){
+	  window.location.href="take_photo.html"; 
+	  }, 1000);
        //fileEntry.moveTo(root_path, newName, FileIO.movedImageSuccess, FileIO.errorHandler);
 	  ////alert('out');
  },
