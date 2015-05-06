@@ -441,12 +441,12 @@ function showAlert() {
           <li class="last-child"><a class="faq" href="faq.html"><img id="faq" src="images/faqs.png"></a></li>
         </ul>
       </div>
-      <div class="right-section" > <a href="javascript:void(0);" id="show" ><img id="imgMain" src="images/photo-frame.png" onload="load_index_image();" style=""></a></div>
-	  <dialog id="window">
+      <div class="right-section" > <a href="javascript:void(0);" onclick="capturePhoto();" ><img id="imgMain" src="images/photo-frame.png" onload="load_index_image();" style=""></a></div>
+	 <!-- <dialog id="window">
 <button class="take_photo_button" onclick="capturePhoto();" style="margin-bottom:5px;">Take Photo</button>
 <button class="take_photo_button" onclick="get_from_gallery();" style="margin-bottom:5px;">Get Photo</button>
 <button class="take_photo_button" id="exit" >Exit</button>
-</dialog>
+</dialog>-->
       <div class="right-sec-contain">
         <form id="indexform" method="POST">
           <p> Due date: <span id="due_date"></span></p>
@@ -475,6 +475,7 @@ function showAlert() {
   </div>
 </div>
 <script>
+/*
 (function() {
 var dialog = document.getElementById('window');
 document.getElementById('show').onclick = function() {
@@ -484,6 +485,7 @@ document.getElementById('exit').onclick = function() {
 dialog.close();
 };
 })();
+*/
 </script>
 </body>
 </html>
