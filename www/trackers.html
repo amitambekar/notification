@@ -7,7 +7,6 @@
 <link href="css/global.css" rel="stylesheet" type="text/css" />
 <link href="css/print.css" rel="stylesheet" type="text/css">
 <link id="pagestyle" rel="stylesheet" type="text/css" href="css/green.css">
-<script src="js/css_loader.js"></script>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link href="css/responsive.css" rel="stylesheet" type="text/css">
 </head>
@@ -37,19 +36,8 @@ console.log('In');
 	var birth_plan = '';
 	var vitals = '';
 	
-	if(css_page == "green.css")
-	{
-	baby = "images/baby.png";
-	journal = "images/journal.png";
-	photos = "images/photos.png";
-	kicks = "images/kicks.png";
-	faq = "images/faqs.png";
-	visits = "images/visits.png";
-	contractions = "images/contractions.png";
-	birth_plan = "images/birth-plan.png";
-	vitals = "images/vitals.png";
-	}
-	else if(css_page == "pink.css")
+	
+	if(css_page == "pink.css")
 	{
 	baby = "images/baby-p.png";
 	journal = "images/journal-p.png";
@@ -72,7 +60,19 @@ console.log('In');
 	contractions = "images/contractions-b.png";
 	birth_plan = "images/birth-plan-b.png";
 	vitals = "images/vitals-b.png";
-	}	
+	}
+	else
+	{
+	baby = "images/baby.png";
+	journal = "images/journal.png";
+	photos = "images/photos.png";
+	kicks = "images/kicks.png";
+	faq = "images/faqs.png";
+	visits = "images/visits.png";
+	contractions = "images/contractions.png";
+	birth_plan = "images/birth-plan.png";
+	vitals = "images/vitals.png";
+	}
 
 	index_baby.src = baby;
 	index_journal.src = journal;
@@ -114,6 +114,7 @@ console.log('In');
     </div>
   </div>
   <div class="clear"></div>
+<script src="js/css_loader.js"></script>
 <script src="js/baby_age.js"></script>
   <div id="footer">
   		<div class="container">

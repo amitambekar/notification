@@ -8,13 +8,13 @@ if( p === 'iPad' || p === 'iPhone' || p === 'iPod' ){
 }
 else
 {
-	//document.getElementById("header").style.borderTop = "20px solid #FFF";
+	document.getElementById("header").style.borderTop = "20px solid #FFF";
 }
 
 var css_page_on_load = localStorage.getItem('css_page') || '';
 css_onload(css_page_on_load);
 function css_onload(sheet){
-main_sheet = "css/"+sheet;
+main_sheet = "css/"+(sheet || '');
 //alert(main_sheet);
 if(sheet != "")
 {

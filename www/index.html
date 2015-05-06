@@ -371,31 +371,23 @@ function load_index_image()
 	}
 	else
 	{
-	if(css_page == "green.css")
-	{
-	path = "images/photo-frame.png";
-	}
-	else if(css_page == "pink.css")
+	if(css_page == "pink.css")
 	{
 	path = "images/photo-frame-p.png";
 	}
 	else if(css_page == "blue.css")
 	{
 	path = "images/photo-frame-b.png";
-	}	
+	}
+	else
+	{
+	path = "images/photo-frame.png";
+	} 
 	//largeImage.src = "images/INDEX1.jpg";
 	largeImage.src = path;
 	}
 	
-		if(css_page == "green.css")
-	{
-	baby = "images/baby.png";
-	journal = "images/journal.png";
-	photos = "images/photos.png";
-	kicks = "images/kicks.png";
-	faq = "images/faqs.png";
-	}
-	else if(css_page == "pink.css")
+		if(css_page == "pink.css")
 	{
 	baby = "images/baby-p.png";
 	journal = "images/journal-p.png";
@@ -410,7 +402,15 @@ function load_index_image()
 	photos = "images/photos-b.png";
 	kicks = "images/kicks-b.png";
 	faq = "images/faq-b.png";
-	}	
+	}
+	else
+	{
+	baby = "images/baby.png";
+	journal = "images/journal.png";
+	photos = "images/photos.png";
+	kicks = "images/kicks.png";
+	faq = "images/faqs.png";
+	}
 	index_baby.src = baby;
 	index_journal.src = journal;
 	index_photos.src = photos;

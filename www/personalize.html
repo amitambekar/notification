@@ -173,7 +173,7 @@ document.getElementById("heightcm").value=results.rows.item(0).heightcm;
 document.getElementById("demo_date").value=results.rows.item(0).set_date;
 document.getElementById("css_page").value=results.rows.item(0).css_page;
 var css_page_on_load = localStorage.getItem('css_page');
-css_onload(css_page_on_load);
+
 	
 	/*	for(var i=0; i < len ; i++)
 	{
@@ -295,15 +295,7 @@ function set_date1()
 alert("ALL");
 }
 
-function css_onload(sheet){
-main_sheet = "css/"+sheet;
-//alert(main_sheet);
-if(sheet != "")
-{
-	document.getElementById('pagestyle').setAttribute('href', main_sheet);
-}
 
-}
 
 
 
@@ -377,7 +369,7 @@ document.getElementById('units').value='kg';
           <li class="date">Due date type:</li>
 		  <li>
 		  <span class="btn width291">
-		<input type="radio" id="due_date1" name="due_date" value="Not Pregnant" >
+		<input type="radio" id="due_date1" name="due_date" value="Not Pregnant" checked>
 		<label for="due_date1">Not Pregnant</label>
 		
 		<input type="radio" id="due_date2" name="due_date" value="LMP" >
@@ -484,6 +476,7 @@ document.getElementById('units').value='kg';
                    });
     </script>
   <div class="clear"></div>
+  <script src="js/css_loader.js"></script>
   <script src="js/baby_age.js"></script>
   <div id="footer">
     <div class="container">
